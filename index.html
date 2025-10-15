@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLICK INFORMATIQUE — Réparation & Services</title>
+  <style>
+    /* Сброс и базовые стили */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: Arial, sans-serif; background: #fff; color: #222; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    header { background: #fff; padding: 20px 40px; display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid #ddd; position: sticky; top: 0; z-index: 100; }
+    header .logo { font-size: 24px; font-weight: bold; color: #d32f2f; }
+    nav a { margin-left: 20px; font-weight: bold; color: #d32f2f; }
+    main { max-width: 1000px; margin: 40px auto; padding: 0 20px; }
+    section { margin-bottom: 60px; }
+    h1, h2 { color: #d32f2f; }
+    h1 { font-size: 32px; margin-bottom: 10px; }
+    h2 { font-size: 26px; margin-bottom: 15px; }
+    p { margin-bottom: 10px; }
+    .btn { display: inline-block; background: #d32f2f; color: #fff; padding: 10px 20px; border-radius: 8px; margin-top: 15px; font-weight: bold; transition: 0.3s; }
+    .btn:hover { background: #b71c1c; }
+    .services { display: flex; flex-wrap: wrap; gap: 20px; }
+    .service { flex: 1 1 300px; border: 1px solid #ddd; border-radius: 10px; padding: 20px; transition: 0.3s; }
+    .service:hover { box-shadow: 0 4px 10px rgba(0,0,0,0.1); }
+    .brands { display: flex; flex-wrap: wrap; gap: 15px; justify-content: center; align-items: center; }
+    .brands img { max-height: 50px; filter: grayscale(1); transition: 0.3s; }
+    .brands img:hover { filter: none; }
+    footer { background: #f5f5f5; text-align: center; padding: 20px; font-size: 14px; color: #555; border-top: 1px solid #ddd; }
+    .contact a { display: block; margin-bottom: 5px; font-weight: bold; color: #d32f2f; }
+    @media (max-width: 600px) { header { flex-direction: column; align-items: flex-start; } nav { margin-top: 10px; } }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">CLICK INFORMATIQUE</div>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#brands">Marques</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Hero -->
+    <section id="hero">
+      <h1>Réparation et maintenance informatique à Loudéac</h1>
+      <p>Besoin d’aide avec votre ordinateur ou votre téléphone ? J’interviens rapidement pour tout type de panne, remplacement de pièces ou configuration système.</p>
+      <p>🔧 Service rapide – Diagnostic gratuit – Garantie sur les réparations</p>
+      <a href="#contact" class="btn">Contacter</a>
+    </section>
+
+    <!-- Services -->
+    <section id="services">
+      <h2>Nos Services</h2>
+      <div class="services">
+        <div class="service">
+          <h3>💻 Réparation PC & Ordinateurs portables</h3>
+          <p>Remplacement de claviers, écrans, connecteurs et composants. Réparation de cartes mères, installation et configuration Windows, nettoyage et optimisation.</p>
+        </div>
+        <div class="service">
+          <h3>📱 Réparation téléphones</h3>
+          <p>Remplacement d’écrans, connecteurs de charge, réparation de contrôleurs d’alimentation, déblocage d’appareils et suppression de mots de passe.</p>
+        </div>
+        <div class="service">
+          <h3>⚙️ Assemblage & Vente de composants</h3>
+          <p>Vente de pièces détachées, montage et configuration complète d’ordinateurs selon vos besoins, conseils personnalisés pour le choix du matériel.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brands -->
+    <section id="brands">
+      <h2>Marques que nous supportons</h2>
+      <div class="brands">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/HP_logo_2012.svg/1200px-HP_logo_2012.svg.png" alt="HP">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Lenovo_logo.svg" alt="Lenovo">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Acer_2011_logo.svg" alt="Acer">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Asus_Logo.svg" alt="Asus">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Dell_Logo.svg" alt="Dell">
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <h2>Contact</h2>
+      <div class="contact">
+        <a href="tel:+33780208155">📞 +33 7 80 20 81 55</a>
+        <a href="mailto:peoneers@gmail.com">📧 peoneers@gmail.com</a>
+        <p>Loudéac 22600, Bretagne</p>
+        <a href="mailto:peoneers@gmail.com" class="btn">Envoyer un message</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © 2025 CLICK INFORMATIQUE — Micro-entreprise de réparation informatique
+  </footer>
+
+</body>
+</html>
