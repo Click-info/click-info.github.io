@@ -123,15 +123,23 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
   object-fit:cover;
   border-radius:12px;
   transition:0.5s;
-  box-shadow:0 0 10px rgba(241,196,15,0.5);
   border:4px solid;
   border-image-slice:1;
   border-image-source: linear-gradient(45deg, #e74c3c, #f1c40f, #8e44ad, #3498db);
+  animation: borderGlow 5s linear infinite;
 }
 
 #gallery .photo-grid img:hover{
   transform:scale(1.1) rotate(2deg);
   box-shadow:0 0 25px #f1c40f;
+}
+
+@keyframes borderGlow{
+  0%{border-image-source: linear-gradient(0deg, #e74c3c, #f1c40f, #8e44ad, #3498db);}
+  25%{border-image-source: linear-gradient(90deg, #3498db, #e74c3c, #f1c40f, #8e44ad);}
+  50%{border-image-source: linear-gradient(180deg, #8e44ad, #3498db, #e74c3c, #f1c40f);}
+  75%{border-image-source: linear-gradient(270deg, #f1c40f, #8e44ad, #3498db, #e74c3c);}
+  100%{border-image-source: linear-gradient(360deg, #e74c3c, #f1c40f, #8e44ad, #3498db);}
 }
 
 /* ===== Logos ===== */
@@ -155,6 +163,7 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
   border-image-slice:1;
   border-image-source: linear-gradient(60deg, #e74c3c, #f1c40f, #8e44ad, #3498db);
   border-radius:8px;
+  animation: borderGlow 6s linear infinite;
 }
 .logos-grid img:hover {
   transform:scale(1.2);
@@ -202,13 +211,6 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
   border-radius:12px;
   box-shadow:0 3px 15px rgba(241,196,15,0.4);
   align-items:flex-start;
-  transform:translateY(30px);
-  opacity:0;
-  animation: fadeInUp 0.8s forwards;
-}
-
-@keyframes fadeInUp{
-  to{transform:translateY(0); opacity:1;}
 }
 
 .review-card .avatar {
@@ -324,7 +326,6 @@ footer { background:#111; color:#fff; text-align:center; padding:20px; margin-to
 </footer>
 
 <script>
-// ===== JS для отзывов =====
 (function(){
   const inputName=document.getElementById('inputName');
   const inputText=document.getElementById('inputText');
@@ -385,7 +386,8 @@ footer { background:#111; color:#fff; text-align:center; padding:20px; margin-to
       { name:'Sophie M.', rating:4, text:'Très contente de la réparation de mon PC.', date:'2025-09-05T15:30:00Z' },
       { name:'Antoine P.', rating:5, text:'Réparation impeccable, je recommande !', date:'2025-09-10T09:45:00Z' },
       { name:'Clara B.', rating:4, text:'Bon suivi et explications claires.', date:'2025-09-12T11:20:00Z' },
-      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T14:10:00Z' }
+      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T14:10:00Z' },
+      { name:'Élodie R.', rating:5, text:'Très satisfait, tout fonctionne parfaitement.', date:'2025-09-18T16:05:00Z' }
     ]);
   }
 
