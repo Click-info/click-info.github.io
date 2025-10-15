@@ -11,13 +11,14 @@ body {
   margin:0;
   font-family:'Orbitron', sans-serif;
   background:#121212;
-  color:#eee;
+  color:#f0f0f0;
   scroll-behavior:smooth;
+  line-height:1.6;
 }
 
 a { text-decoration:none; color:inherit; }
 
-h1,h2,h3 { margin:0; }
+h1,h2,h3 { margin:0; text-shadow:0 0 5px rgba(0,0,0,0.7); }
 
 section { padding:60px 20px; }
 
@@ -95,11 +96,13 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
 }
 
 .service-card {
-  background:#1c1c1c;
-  padding:20px;
+  background: linear-gradient(145deg, #1f1f1f, #171717);
+  padding:25px;
   border-radius:15px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.5);
+  box-shadow:0 6px 20px rgba(241,196,15,0.3);
   transition:0.5s;
+  font-size:1em;
+  line-height:1.5;
 }
 
 .service-card:hover{
@@ -107,8 +110,8 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
   box-shadow:0 6px 25px rgba(241,196,15,0.6);
 }
 
-.service-card h3 { color:#f1c40f; margin-bottom:10px; text-shadow:0 0 5px #f1c40f; }
-.service-card p { font-size:0.95em; color:#ddd; }
+.service-card h3 { color:#f1c40f; margin-bottom:10px; text-shadow:0 0 6px #f1c40f; }
+.service-card p { font-size:0.95em; color:#e0e0e0; }
 
 /* ===== Gallery ===== */
 #gallery .photo-grid {
@@ -206,10 +209,10 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
 
 .review-card {
   display:flex;
-  background:#1c1c1c;
-  padding:15px;
+  background: linear-gradient(145deg, #1f1f1f, #171717);
+  padding:20px;
   border-radius:12px;
-  box-shadow:0 3px 15px rgba(241,196,15,0.4);
+  box-shadow:0 4px 20px rgba(241,196,15,0.4);
   align-items:flex-start;
 }
 
@@ -225,6 +228,7 @@ nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
   justify-content:center;
   margin-right:10px;
   flex-shrink:0;
+  text-shadow:0 0 3px #000;
 }
 
 /* ===== Contact ===== */
@@ -386,8 +390,7 @@ footer { background:#111; color:#fff; text-align:center; padding:20px; margin-to
       { name:'Sophie M.', rating:4, text:'Très contente de la réparation de mon PC.', date:'2025-09-05T15:30:00Z' },
       { name:'Antoine P.', rating:5, text:'Réparation impeccable, je recommande !', date:'2025-09-10T09:45:00Z' },
       { name:'Clara B.', rating:4, text:'Bon suivi et explications claires.', date:'2025-09-12T11:20:00Z' },
-      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T14:10:00Z' },
-      { name:'Élodie R.', rating:5, text:'Très satisfait, tout fonctionne parfaitement.', date:'2025-09-18T16:05:00Z' }
+      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T13:10:00Z' }
     ]);
   }
 
