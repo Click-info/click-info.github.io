@@ -25,7 +25,7 @@ section { padding: 60px 20px; }
 
 /* ===== Header ===== */
 header {
-  background: #111;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   padding: 20px;
   display: flex;
@@ -34,6 +34,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
+  backdrop-filter: blur(8px);
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.7);
 }
 
@@ -55,19 +56,22 @@ nav a:hover {
 
 /* ===== Hero ===== */
 .hero {
-  background: linear-gradient(-45deg, #111, #222, #333, #111);
-  background-size: 400% 400%;
-  animation: gradientBG 15s ease infinite;
+  background: url('background.jpg') center/cover no-repeat fixed;
   color: #fff;
   text-align: center;
-  padding: 120px 20px;
+  padding: 160px 20px;
+  position: relative;
 }
 
-@keyframes gradientBG {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(2px);
 }
+
+.hero * { position: relative; z-index: 1; }
 
 .hero h1 {
   font-size: 3em;
@@ -308,140 +312,3 @@ footer {
   <a href="#contact" class="btn">Contacter</a>
   <a href="#services" class="btn">Découvrir</a>
 </section>
-
-<section id="services" class="container">
-  <h2 style="text-align:center;">Nos Services</h2>
-  <div class="service-cards">
-    <div class="service-card"><h3>Ordinateurs & PC fixes</h3><p>Réparation, remplacement de pièces, nettoyage, installation de Windows et récupération de données.</p></div>
-    <div class="service-card"><h3>Téléphones</h3><p>Changement d’écran, batterie, connecteur de charge, déblocage et entretien général.</p></div>
-    <div class="service-card"><h3>Assemblage & Vente</h3><p>Création de PC personnalisés selon vos besoins et votre budget. Conseils techniques inclus.</p></div>
-  </div>
-</section>
-
-<section id="gallery" class="container">
-  <h2 style="text-align:center;">Nos Réalisations</h2>
-  <div class="photo-grid">
-    <img src="photo1.png" alt="Photo1">
-    <img src="photo2.png" alt="Photo2">
-    <img src="photo3.png" alt="Photo3">
-    <img src="photo4.png" alt="Photo4">
-    <img src="photo5.png" alt="Photo5">
-    <img src="photo6.png" alt="Photo6">
-  </div>
-</section>
-
-<section id="brands">
-  <h2>Nos partenaires</h2>
-  <div class="logos-grid">
-    <img src="apple.png" alt="Apple">
-    <img src="asus.png" alt="Asus">
-    <img src="dell.png" alt="Dell">
-    <img src="hp.png" alt="HP">
-    <img src="lenovo.png" alt="Lenovo">
-  </div>
-</section>
-
-<section id="reviews" class="container">
-  <h2>Avis Clients</h2>
-  <div class="review-form">
-    <input type="text" placeholder="Votre nom" id="inputName">
-    <select id="inputRating">
-      <option value="5">★★★★★</option>
-      <option value="4">★★★★</option>
-      <option value="3">★★★</option>
-      <option value="2">★★</option>
-      <option value="1">★</option>
-    </select>
-    <textarea placeholder="Votre avis (20 caractères min)" id="inputText"></textarea>
-    <button id="btnSubmit">Ajouter un avis</button>
-    <div id="msg" style="color:#f1c40f;font-weight:700;margin-top:5px;"></div>
-  </div>
-  <div class="reviews-list" id="listReviews"></div>
-</section>
-
-<section id="contact">
-  <h2>Contact</h2>
-  <p>📞 <a href="tel:+33780208155">+33 7 80 20 81 55</a></p>
-  <p>✉️ <a href="mailto:peoneers@gmail.com">peoneers@gmail.com</a></p>
-  <p>Loudéac 22600, Bretagne</p>
-</section>
-
-<footer>
-  © 2025 Click Informatique — Micro-entreprise de réparation informatique
-</footer>
-
-<script>
-(function(){
-  const inputName=document.getElementById('inputName');
-  const inputText=document.getElementById('inputText');
-  const inputRating=document.getElementById('inputRating');
-  const btnSubmit=document.getElementById('btnSubmit');
-  const msgEl=document.getElementById('msg');
-  const listEl=document.getElementById('listReviews');
-
-  function nowISO(){ return new Date().toISOString(); }
-  function saveReviews(arr){ localStorage.setItem('reviews',JSON.stringify(arr)); }
-  function loadReviews(){ return JSON.parse(localStorage.getItem('reviews')||'[]'); }
-
-  function starHTML(n){ return '★'.repeat(n)+'☆'.repeat(5-n); }
-
-  function createAvatar(name){
-    const ch=name?name[0].toUpperCase():'A';
-    const bg=['#e74c3c','#c0392b','#d35400','#2980b9','#27ae60','#8e44ad'][ch.charCodeAt(0)%6];
-    const el=document.createElement('div'); el.className='avatar'; el.textContent=ch; el.style.background=bg;
-    return el;
-  }
-
-  function escapeHtml(s){ return s?s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])):''; }
-
-  function formatDate(iso){ const d=new Date(iso); return d.toLocaleDateString('fr-FR'); }
-
-  function renderReviews(){
-    const arr=loadReviews().slice().reverse();
-    listEl.innerHTML='';
-    if(!arr.length){
-      listEl.innerHTML='<div style="grid-column:1/-1;color:#aaa;text-align:center;padding:20px;background:#1c1c1c;border-radius:10px;">Pas encore d’avis — soyez le premier !</div>';
-      return;
-    }
-    arr.forEach(r=>{
-      const card=document.createElement('div'); card.className='review-card';
-      card.appendChild(createAvatar(r.name));
-      const body=document.createElement('div'); body.style.flex='1';
-      const top=document.createElement('div'); Object.assign(top.style,{display:'flex',justifyContent:'space-between',alignItems:'center'});
-      const nameEl=document.createElement('div'); nameEl.innerHTML='<strong>'+escapeHtml(r.name||'Anonyme')+'</strong>'; nameEl.style.marginBottom='6px';
-      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#f1c40f',fontWeight:'700'}); metaEl.innerHTML=starHTML(r.rating)+'<br>'+formatDate(r.date);
-      const textEl=document.createElement('div'); Object.assign(textEl.style,{color:'#ddd',marginTop:'6px'}); textEl.textContent=r.text;
-      top.appendChild(nameEl); top.appendChild(metaEl); body.appendChild(top); body.appendChild(textEl); card.appendChild(body);
-      listEl.appendChild(card);
-    });
-  }
-
-  btnSubmit.addEventListener('click',function(){
-    const name=(inputName.value||'').trim();
-    const rating=parseInt(inputRating.value)||5;
-    const text=(inputText.value||'').trim();
-    if(text.length<20){ msgEl.textContent='Votre avis est trop court.'; return; }
-    const review={name:name||'Anonyme',rating:Math.max(1,Math.min(5,rating)),text:text,date:nowISO()};
-    const arr=loadReviews(); arr.push(review); saveReviews(arr);
-    inputName.value=''; inputRating.value='5'; inputText.value='';
-    msgEl.textContent='Merci ! Votre avis a été ajouté.';
-    renderReviews();
-  });
-
-  if(loadReviews().length===0){
-    saveReviews([
-      { name:'Julien L.', rating:5, text:'Service rapide et très professionnel !', date:'2025-09-01T10:00:00Z' },
-      { name:'Sophie M.', rating:4, text:'Très contente de la réparation de mon PC.', date:'2025-09-05T15:30:00Z' },
-      { name:'Antoine P.', rating:5, text:'Réparation impeccable, je recommande !', date:'2025-09-10T09:45:00Z' },
-      { name:'Clara B.', rating:4, text:'Bon suivi et explications claires.', date:'2025-09-12T11:20:00Z' },
-      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T14:10:00Z' },
-      { name:'Élodie R.', rating:5, text:'Très satisfait, tout fonctionne parfaitement.', date:'2025-09-18T16:05:00Z' }
-    ]);
-  }
-
-  renderReviews();
-})();
-</script>
-
-</body>
-</html>
