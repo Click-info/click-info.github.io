@@ -6,94 +6,129 @@
 <title>Click Informatique</title>
 <style>
   body {font-family: Arial, sans-serif; margin:0; background:#f2f2f2; color:#333;}
-  header {background:#c0392b; color:#fff; padding:20px 0; text-align:center;}
-  header h1 {margin:0; font-size:2em;}
+  a {text-decoration:none; color:inherit;}
+  header {background:#fff; border-bottom:2px solid #c0392b; padding:20px 0;}
+  header .container {display:flex; justify-content:space-between; align-items:center; max-width:1100px; margin:0 auto; padding:0 20px;}
+  header h1 {margin:0; color:#c0392b;}
+  nav a {margin-left:20px; font-weight:600; color:#333;}
   section {padding:60px 20px;}
-  .container {max-width:1100px; margin:0 auto;}
+  h2 {text-align:center; margin-bottom:40px; color:#c0392b;}
+  .services {display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; max-width:1100px; margin:0 auto;}
+  .service-card {background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
+  .service-card h3 {margin-top:0; color:#c0392b;}
   .gallery {display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px;}
   .gallery img {width:100%; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.1);}
   .logos {display:flex; flex-wrap:wrap; gap:15px; justify-content:center; margin-top:20px;}
   .logos img {width:80px; height:auto;}
-  button {cursor:pointer;}
+  .contact {background:#fff; max-width:600px; margin:0 auto; padding:30px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06);}
+  .contact input, .contact textarea, .contact button {width:100%; padding:10px; margin-bottom:12px; border-radius:8px; border:1px solid #ddd; font-size:1em;}
+  button {background:#c0392b; color:#fff; border:none; font-weight:700; cursor:pointer;}
+  .reviews-list {display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px; max-width:1100px; margin:0 auto;}
+  .review-card {background:#fff; padding:14px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06); display:flex; gap:12px; align-items:flex-start;}
 </style>
 </head>
 <body>
 
 <header>
-  <h1>Click Informatique</h1>
+  <div class="container">
+    <h1>Click Informatique</h1>
+    <nav>
+      <a href="#services">Services</a>
+      <a href="#gallery">Réalisations</a>
+      <a href="#brands">Partenaires</a>
+      <a href="#reviews">Avis</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
 </header>
 
-<!-- Галерея фото -->
+<!-- Главный блок -->
+<section id="hero">
+  <h2>Réparation et maintenance informatique à Loudéac</h2>
+  <p style="text-align:center; max-width:800px; margin:0 auto 20px;">Besoin d’aide avec votre ordinateur ou votre téléphone ? J’interviens rapidement pour tout type de panne, remplacement de pièces ou configuration système.</p>
+  <div style="text-align:center;"><a href="#contact"><button>Contacter</button></a></div>
+</section>
+
+<!-- Услуги -->
+<section id="services">
+  <h2>Nos Services</h2>
+  <div class="services">
+    <div class="service-card">
+      <h3>💻 Réparation PC & Portables</h3>
+      <p>Remplacement de claviers, écrans (matrices), connecteurs et composants, réparation de cartes mères, installation et configuration Windows, optimisation système.</p>
+    </div>
+    <div class="service-card">
+      <h3>📱 Réparation de téléphones</h3>
+      <p>Remplacement d’écrans, connecteurs de charge, réparations de contrôleurs d’alimentation, déblocage d’appareils et suppression de mots de passe oubliés.</p>
+    </div>
+    <div class="service-card">
+      <h3>⚙️ Vente & Assemblage</h3>
+      <p>Vente de composants pour PC, montage et configuration complète selon vos besoins, conseils personnalisés pour le choix du matériel.</p>
+    </div>
+  </div>
+</section>
+
+<!-- Галерея -->
 <section id="gallery">
-  <div class="container">
-    <h2 style="text-align:center; color:#c0392b;">Nos réalisations</h2>
-    <div class="gallery">
-      <img src="photo1.png" alt="Photo 1">
-      <img src="photo2.png" alt="Photo 2">
-      <img src="photo3.png" alt="Photo 3">
-      <img src="photo4.png" alt="Photo 4">
-      <img src="photo5.png" alt="Photo 5">
-      <img src="photo6.png" alt="Photo 6">
-    </div>
+  <h2>Nos réalisations</h2>
+  <div class="gallery">
+    <img src="photo1.png" alt="Photo 1">
+    <img src="photo2.png" alt="Photo 2">
+    <img src="photo3.png" alt="Photo 3">
+    <img src="photo4.png" alt="Photo 4">
+    <img src="photo5.png" alt="Photo 5">
+    <img src="photo6.png" alt="Photo 6">
   </div>
 </section>
 
-<!-- Логотипы брендов -->
-<section id="brands" style="background:#fff;">
-  <div class="container">
-    <h2 style="text-align:center; color:#c0392b;">Nos partenaires</h2>
-    <div class="logos">
-      <img src="apple.png" alt="Apple">
-      <img src="asus.png" alt="Asus">
-      <img src="dell.png" alt="Dell">
-      <img src="hp.png" alt="HP">
-      <img src="lenovo.png" alt="Lenovo">
-    </div>
+<!-- Логотипы -->
+<section id="brands">
+  <h2>Nos partenaires</h2>
+  <div class="logos">
+    <img src="apple.png" alt="Apple">
+    <img src="asus.png" alt="Asus">
+    <img src="dell.png" alt="Dell">
+    <img src="hp.png" alt="HP">
+    <img src="lenovo.png" alt="Lenovo">
   </div>
 </section>
 
-<!-- == Секция отзывов с формой == -->
-<section id="reviews" style="background:#fefefe;">
-  <div class="container">
-    <h2 style="text-align:center; color:#c0392b;">Avis clients</h2>
+<!-- Отзывы -->
+<section id="reviews">
+  <h2>Avis clients</h2>
+  <div class="contact" style="margin-bottom:30px;">
+    <input id="r-name" type="text" placeholder="Votre nom">
+    <select id="r-rating">
+      <option value="5">★★★★★ 5</option>
+      <option value="4">★★★★ 4</option>
+      <option value="3">★★★ 3</option>
+      <option value="2">★★ 2</option>
+      <option value="1">★ 1</option>
+    </select>
+    <textarea id="r-text" rows="4" placeholder="Votre avis"></textarea>
+    <button id="r-submit">Envoyer</button>
+    <div id="r-msg" style="margin-top:10px;"></div>
+  </div>
+  <div id="reviews-list" class="reviews-list"></div>
+</section>
 
-    <!-- Форма добавления отзыва -->
-    <div id="review-form" style="max-width:800px; margin:0 auto 30px; background:#f7f7f7; padding:18px; border-radius:12px; box-shadow:0 6px 18px rgba(0,0,0,0.06);">
-      <label style="display:block; margin-bottom:8px; font-weight:700;">Оставить отзыв</label>
-      <div style="display:flex; gap:10px; align-items:center; margin-bottom:8px; flex-wrap:wrap;">
-        <input id="r-name" type="text" placeholder="Ваше имя" style="flex:1; padding:10px; border-radius:8px; border:1px solid #ddd;">
-        <select id="r-rating" style="width:120px; padding:10px; border-radius:8px; border:1px solid #ddd;">
-          <option value="5">★★★★★ 5</option>
-          <option value="4">★★★★ 4</option>
-          <option value="3">★★★ 3</option>
-          <option value="2">★★ 2</option>
-          <option value="1">★ 1</option>
-        </select>
-      </div>
-
-      <textarea id="r-text" rows="4" placeholder="Расскажите о своём опыте (не менее 20 символов)" style="width:100%; padding:10px; border-radius:8px; border:1px solid #ddd;"></textarea>
-
-      <div style="display:flex; gap:10px; align-items:center; margin-top:12px; flex-wrap:wrap;">
-        <button id="r-submit" style="background:#c0392b; color:#fff; border:none; padding:10px 18px; border-radius:8px; font-weight:700;">Отправить</button>
-        <div id="r-msg" style="color:#c0392b; font-weight:600;"></div>
-      </div>
-
-      <p style="margin-top:10px; color:#666; font-size:13px;">Ваш отзыв появится после отправки. Уважайте других — не публикуйте личные данные.</p>
-    </div>
-
-    <!-- Контейнер с отзывами -->
-    <div id="reviews-list" style="display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:18px;">
-      <!-- Отзывы подгрузятся через JS -->
-    </div>
+<!-- Контакты -->
+<section id="contact">
+  <h2>Contact</h2>
+  <div class="contact">
+    <p><strong>📞 Téléphone :</strong> <a href="tel:+33780208155">+33 7 80 20 81 55</a></p>
+    <p><strong>📧 Email :</strong> <a href="mailto:peoneers@gmail.com">peoneers@gmail.com</a></p>
+    <p><strong>📍 Localisation :</strong> Loudéac 22600</p>
   </div>
 </section>
+
+<footer style="background:#fff; text-align:center; padding:20px; border-top:2px solid #c0392b;">
+  © 2025 Click Informatique — Micro-entreprise
+</footer>
 
 <script>
 (function(){
-  const STORAGE_KEY = 'click_informatique_reviews_v1';
-  const MIN_TEXT_LENGTH = 20;
-  const SUBMIT_COOLDOWN_MS = 10 * 1000;
-
+  const STORAGE_KEY = 'click_informatique_reviews_v2';
   const listEl = document.getElementById('reviews-list');
   const inputName = document.getElementById('r-name');
   const inputRating = document.getElementById('r-rating');
@@ -104,7 +139,8 @@
   function nowISO(){ return new Date().toISOString(); }
   function loadReviews(){ try { const raw = localStorage.getItem(STORAGE_KEY); return raw?JSON.parse(raw):[]; } catch(e){ return []; } }
   function saveReviews(arr){ localStorage.setItem(STORAGE_KEY, JSON.stringify(arr)); }
-  function formatDate(iso){ try { return new Date(iso).toLocaleDateString(); } catch(e){ return iso; } }
+  function formatDate(iso){ return new Date(iso).toLocaleDateString(); }
+  function starHTML(n){ n=Math.max(0,Math.min(5,+n)); let out=''; for(let i=1;i<=5;i++) out+=(i<=n?'★':'☆'); return out; }
   function createAvatar(name){ 
     const ch = name?name.trim()[0].toUpperCase():'?';
     const bg = ['#f39c12','#16a085','#2980b9','#8e44ad','#d35400','#2c3e50'][(ch.charCodeAt(0)%6)];
@@ -113,53 +149,44 @@
     Object.assign(el.style,{width:'48px',height:'48px',display:'flex',alignItems:'center',justifyContent:'center',borderRadius:'10px',fontWeight:'700',color:'#fff',background:bg,flex:'0 0 48px'});
     return el;
   }
-  function starHTML(n){ n=Math.max(0,Math.min(5,+n)); let out=''; for(let i=1;i<=5;i++) out+=(i<=n?'★':'☆'); return out; }
   function escapeHtml(s){ return s?s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])):''; }
 
   function renderReviews(){
     const arr = loadReviews().slice().reverse();
     listEl.innerHTML='';
-    if(!arr.length){ listEl.innerHTML='<div style="grid-column:1/-1;color:#666;text-align:center;padding:20px;background:#fff;border-radius:10px;">Пока что нет отзывов — будьте первым!</div>'; return; }
+    if(!arr.length){ listEl.innerHTML='<div style="grid-column:1/-1;color:#666;text-align:center;padding:20px;background:#fff;border-radius:10px;">Pas encore d’avis — soyez le premier !</div>'; return; }
     arr.forEach(r=>{
-      const card=document.createElement('div');
-      Object.assign(card.style,{background:'#fff',padding:'14px',borderRadius:'12px',boxShadow:'0 6px 18px rgba(0,0,0,0.06)',display:'flex',gap:'12px',alignItems:'flex-start'});
+      const card=document.createElement('div'); card.className='review-card';
       card.appendChild(createAvatar(r.name));
       const body=document.createElement('div'); body.style.flex='1';
       const top=document.createElement('div'); Object.assign(top.style,{display:'flex',justifyContent:'space-between',alignItems:'center'});
       const nameEl=document.createElement('div'); nameEl.innerHTML='<strong>'+escapeHtml(r.name||'Anonyme')+'</strong>'; nameEl.style.marginBottom='6px';
-      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#c0392b',fontWeight:'700'}); metaEl.textContent=starHTML(r.rating)+'  '+formatDate(r.date);
+      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#c0392b',fontWeight:'700'}); metaEl.innerHTML=starHTML(r.rating)+'<br>'+formatDate(r.date);
       const textEl=document.createElement('div'); Object.assign(textEl.style,{color:'#444',marginTop:'6px'}); textEl.textContent=r.text;
       top.appendChild(nameEl); top.appendChild(metaEl); body.appendChild(top); body.appendChild(textEl); card.appendChild(body);
       listEl.appendChild(card);
     });
   }
 
-  let lastSubmitAt=0;
-  function showMsg(text,color='#c0392b'){ msgEl.style.color=color; msgEl.textContent=text; setTimeout(()=>{ if(msgEl.textContent===text) msgEl.textContent=''; },4000); }
-
   btnSubmit.addEventListener('click',function(){
     const name=(inputName.value||'').trim();
     const rating=parseInt(inputRating.value)||5;
     const text=(inputText.value||'').trim();
-    if(text.length<MIN_TEXT_LENGTH){ showMsg('Текст отзыва слишком короткий (минимум '+MIN_TEXT_LENGTH+' символов).','#c0392b'); return; }
-    const now=Date.now();
-    if(now-lastSubmitAt<SUBMIT_COOLDOWN_MS){ showMsg('Пожалуйста, подождите немного перед следующим отзывом.','#c0392b'); return; }
+    if(text.length<20){ msgEl.textContent='Votre avis est trop court.'; return; }
     const review={name:name||'Anonyme',rating:Math.max(1,Math.min(5,rating)),text:text,date:nowISO()};
-    const arr=loadReviews(); arr.push(review); saveReviews(arr); lastSubmitAt=now;
+    const arr=loadReviews(); arr.push(review); saveReviews(arr);
     inputName.value=''; inputRating.value='5'; inputText.value='';
-    showMsg('Спасибо — ваш отзыв добавлен!','#16a085');
+    msgEl.textContent='Merci ! Votre avis a été ajouté.';
     renderReviews();
   });
 
-  (function seedIfEmpty(){
-    const arr=loadReviews();
-    if(!arr || arr.length===0){
-      saveReviews([
-        { name:'Julien L.', rating:5, text:'Service rapide et très professionnel ! Mon PC fonctionne comme neuf.', date:new Date().toISOString() },
-        { name:'Marie P.', rating:5, text:'Réparation de téléphone impeccable, je recommande vivement.', date:new Date(Date.now()-86400000).toISOString() }
-      ]);
-    }
-  })();
+  // Начальные отзывы
+  if(loadReviews().length===0){
+    saveReviews([
+      { name:'Julien L.', rating:5, text:'Service rapide et très professionnel !', date:new Date().toISOString() },
+      { name:'Marie P.', rating:5, text:'Réparation de téléphone impeccable, je recommande.', date:new Date(Date.now()-86400000).toISOString() }
+    ]);
+  }
 
   renderReviews();
 })();
