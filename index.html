@@ -1,248 +1,85 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Click Informatique</title>
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Click Informatique - Réparation & Services</title>
+  <!-- Google Fonts: Orbitron (технический стиль) -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    /* Сброс и базовые стили */
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Roboto', sans-serif; background: #ffffff; color: #2C3E50; line-height: 1.6; }
+    a { text-decoration: none; color: inherit; }
+    img { max-width: 100%; height: auto; display: block; }
 
-body {
-  margin:0;
-  font-family:'Orbitron', sans-serif;
-  background:#121212;
-  color:#eee;
-  scroll-behavior:smooth;
-}
+    header {
+      display: flex; justify-content: space-between; align-items: center; padding: 20px 40px;
+      background: #f5f5f5; box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    header .logo { font-family: 'Orbitron', sans-serif; font-size: 28px; color: #C0392B; font-weight: 700; }
+    nav a { margin-left: 25px; font-weight: 500; color: #2C3E50; transition: color 0.3s; }
+    nav a:hover { color: #C0392B; }
 
-a { text-decoration:none; color:inherit; }
+    /* Hero */
+    .hero { text-align: center; padding: 80px 20px; background: linear-gradient(135deg, #ffe6e6, #ffffff); }
+    .hero h1 {
+      font-family: 'Orbitron', sans-serif; font-size: 48px; color: #C0392B;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.2); margin-bottom: 20px;
+    }
+    .hero p {
+      font-size: 20px; max-width: 700px; margin: 0 auto 30px auto;
+      color: #2C3E50;
+    }
+    .hero .btn { 
+      display: inline-block; background: #C0392B; color: #fff; padding: 15px 30px; border-radius: 8px;
+      font-weight: 500; transition: background 0.3s;
+    }
+    .hero .btn:hover { background: #E74C3C; }
 
-h1,h2,h3 { margin:0; }
+    /* Services */
+    .services { padding: 60px 20px; text-align: center; }
+    .services h2 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: #C0392B; margin-bottom: 40px; }
+    .service-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; }
+    .service { flex: 1 1 300px; background: #f5f5f5; padding: 20px; border-radius: 12px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .service h3 { color: #C0392B; margin-bottom: 15px; }
+    .service p { color: #2C3E50; font-size: 16px; }
 
-section { padding:60px 20px; }
+    /* Gallery */
+    .gallery { padding: 60px 20px; text-align: center; }
+    .gallery h2 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: #C0392B; margin-bottom: 40px; }
+    .gallery-images { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+    .gallery-images img { width: 250px; border-radius: 10px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); }
 
-.container { max-width:1100px; margin:0 auto; }
+    /* Brands */
+    .brands { padding: 60px 20px; text-align: center; background: #f5f5f5; }
+    .brands h2 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: #C0392B; margin-bottom: 30px; }
+    .brand-logos { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; align-items: center; }
+    .brand-logos img { width: 100px; height: auto; }
 
-/* ===== Header ===== */
-header {
-  background:#111;
-  color:#fff;
-  padding:20px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  position:sticky;
-  top:0;
-  z-index:1000;
-  box-shadow:0 4px 10px rgba(0,0,0,0.7);
-}
+    /* Reviews */
+    .reviews { padding: 60px 20px; text-align: center; }
+    .reviews h2 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: #C0392B; margin-bottom: 40px; }
+    .review { background: #f5f5f5; padding: 20px; border-radius: 12px; margin-bottom: 20px; max-width: 700px; margin-left: auto; margin-right: auto; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+    .review p { font-size: 16px; color: #2C3E50; margin-bottom: 10px; }
+    .review span { font-size: 14px; color: #555; }
 
-header .logo { font-size:1.8em; font-weight:700; color:#e74c3c; text-shadow:0 0 8px #e74c3c;}
-nav a { margin-left:20px; font-weight:700; transition:0.3s; }
-nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
+    /* Contact */
+    .contact { padding: 60px 20px; text-align: center; }
+    .contact h2 { font-family: 'Orbitron', sans-serif; font-size: 36px; color: #C0392B; margin-bottom: 40px; }
+    .contact p { font-size: 18px; color: #2C3E50; margin-bottom: 10px; }
+    .contact a.btn { margin-top: 10px; }
 
-/* ===== Hero ===== */
-.hero {
-  background: linear-gradient(-45deg,#111,#222,#333,#111);
-  background-size:400% 400%;
-  animation: gradientBG 15s ease infinite;
-  color:#fff;
-  text-align:center;
-  padding:120px 20px;
-}
+    /* Footer */
+    footer { text-align: center; padding: 30px 20px; background: #2C3E50; color: #fff; font-size: 14px; }
 
-@keyframes gradientBG{
-  0%{background-position:0% 50%;}
-  50%{background-position:100% 50%;}
-  100%{background-position:0% 50%;}
-}
-
-.hero h1 {
-  font-size:3em;
-  color:#e74c3c;
-  text-shadow:0 0 15px #e74c3c,0 0 25px #f1c40f;
-  margin-bottom:20px;
-}
-
-.hero p {
-  font-size:1.2em;
-  max-width:700px;
-  margin:0 auto 30px;
-}
-
-.hero .btn {
-  background:linear-gradient(45deg,#e74c3c,#f1c40f);
-  color:#fff;
-  padding:15px 30px;
-  border-radius:12px;
-  font-weight:700;
-  margin:0 10px;
-  display:inline-block;
-  transition:0.5s;
-  box-shadow:0 0 10px #e74c3c,0 0 20px #f1c40f;
-}
-
-.hero .btn:hover{
-  transform:scale(1.1);
-  box-shadow:0 0 25px #e74c3c,0 0 35px #f1c40f;
-}
-
-/* ===== Services ===== */
-#services .service-cards {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.service-card {
-  background:#1c1c1c;
-  padding:20px;
-  border-radius:15px;
-  box-shadow:0 4px 15px rgba(0,0,0,0.5);
-  transition:0.5s;
-}
-
-.service-card:hover{
-  transform:translateY(-10px) scale(1.03);
-  box-shadow:0 6px 25px rgba(241,196,15,0.6);
-}
-
-.service-card h3 { color:#f1c40f; margin-bottom:10px; text-shadow:0 0 5px #f1c40f; }
-.service-card p { font-size:0.95em; color:#ddd; }
-
-/* ===== Gallery ===== */
-#gallery .photo-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
-  gap:15px;
-}
-
-#gallery .photo-grid img {
-  width:100%;
-  height:150px;
-  object-fit:cover;
-  border-radius:12px;
-  transition:0.5s;
-  border:4px solid;
-  border-image-slice:1;
-  border-image-source: linear-gradient(45deg, #e74c3c, #f1c40f, #8e44ad, #3498db);
-  animation: borderGlow 5s linear infinite;
-}
-
-#gallery .photo-grid img:hover{
-  transform:scale(1.1) rotate(2deg);
-  box-shadow:0 0 25px #f1c40f;
-}
-
-@keyframes borderGlow{
-  0%{border-image-source: linear-gradient(0deg, #e74c3c, #f1c40f, #8e44ad, #3498db);}
-  25%{border-image-source: linear-gradient(90deg, #3498db, #e74c3c, #f1c40f, #8e44ad);}
-  50%{border-image-source: linear-gradient(180deg, #8e44ad, #3498db, #e74c3c, #f1c40f);}
-  75%{border-image-source: linear-gradient(270deg, #f1c40f, #8e44ad, #3498db, #e74c3c);}
-  100%{border-image-source: linear-gradient(360deg, #e74c3c, #f1c40f, #8e44ad, #3498db);}
-}
-
-/* ===== Logos ===== */
-#brands { text-align:center; }
-#brands h2 { color:#e74c3c; margin-bottom:30px; text-shadow:0 0 10px #e74c3c; }
-.logos-grid {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
-  gap:20px;
-  justify-items:center;
-  align-items:center;
-  max-width:800px;
-  margin:0 auto;
-}
-.logos-grid img {
-  max-width:100px;
-  max-height:60px;
-  object-fit:contain;
-  transition:0.5s;
-  border:3px solid;
-  border-image-slice:1;
-  border-image-source: linear-gradient(60deg, #e74c3c, #f1c40f, #8e44ad, #3498db);
-  border-radius:8px;
-  animation: borderGlow 6s linear infinite;
-}
-.logos-grid img:hover {
-  transform:scale(1.2);
-  filter:drop-shadow(0 0 15px #f1c40f);
-}
-
-/* ===== Reviews ===== */
-#reviews h2 { text-align:center; color:#e74c3c; margin-bottom:40px; text-shadow:0 0 10px #e74c3c; }
-.review-form { display:flex; flex-direction:column; max-width:600px; margin:0 auto 40px; gap:10px; }
-.review-form input, .review-form textarea, .review-form select {
-  padding:10px;
-  border-radius:8px;
-  border:1px solid #555;
-  width:100%;
-  font-family:inherit;
-  font-size:1em;
-  background:#222;
-  color:#eee;
-}
-.review-form button {
-  background:linear-gradient(45deg,#e74c3c,#f1c40f);
-  color:#fff;
-  padding:12px;
-  font-weight:700;
-  border:none;
-  border-radius:12px;
-  cursor:pointer;
-  transition:0.5s;
-}
-.review-form button:hover {
-  transform:scale(1.05);
-  box-shadow:0 0 20px #f1c40f;
-}
-
-.reviews-list {
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:20px;
-}
-
-.review-card {
-  display:flex;
-  background:#1c1c1c;
-  padding:15px;
-  border-radius:12px;
-  box-shadow:0 3px 15px rgba(241,196,15,0.4);
-  align-items:flex-start;
-}
-
-.review-card .avatar {
-  width:50px;
-  height:50px;
-  border-radius:50%;
-  background:#e74c3c;
-  color:#fff;
-  font-weight:700;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  margin-right:10px;
-  flex-shrink:0;
-}
-
-/* ===== Contact ===== */
-#contact { text-align:center; }
-#contact h2 { color:#e74c3c; margin-bottom:20px; text-shadow:0 0 8px #e74c3c; }
-#contact p { margin:5px 0; }
-#contact a { color:#f1c40f; font-weight:700; }
-
-/* ===== Footer ===== */
-footer { background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
-
-/* ===== Media ===== */
-@media(max-width:768px){
-  .hero h1{font-size:2em;}
-  .hero p{font-size:1em;}
-}
-
-</style>
+    /* Responsive */
+    @media(max-width: 768px){
+      .service-list, .gallery-images, .brand-logos { flex-direction: column; align-items: center; }
+      .hero h1 { font-size: 36px; }
+      .hero p { font-size: 18px; }
+    }
+  </style>
 </head>
 <body>
 
@@ -250,75 +87,73 @@ footer { background:#111; color:#fff; text-align:center; padding:20px; margin-to
   <div class="logo">Click Informatique</div>
   <nav>
     <a href="#services">Services</a>
-    <a href="#gallery">Photos</a>
-    <a href="#brands">Brands</a>
+    <a href="#gallery">Travaux</a>
+    <a href="#brands">Marques</a>
     <a href="#reviews">Avis</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
 <section class="hero">
-  <h1>Réparation & Maintenance Informatique</h1>
-  <p>Ordinateurs portables, PC fixes, téléphones, vente de composants et assemblage sur mesure.</p>
+  <h1>Réparation & Maintenance Informatique à Loudéac</h1>
+  <p>Réparation d’ordinateurs portables et PC fixes, téléphones, vente de composants et assemblage sur mesure. Service rapide, fiable et professionnel.</p>
   <a href="#contact" class="btn">Contacter</a>
-  <a href="#services" class="btn">Nos Services</a>
 </section>
 
-<section id="services" class="container">
-  <h2 style="text-align:center;">Nos Services</h2>
-  <div class="service-cards">
-    <div class="service-card"><h3>Ordinateurs & PC fixes</h3><p>Remplacement composants, réparation cartes mères, installation Windows.</p></div>
-    <div class="service-card"><h3>Téléphones</h3><p>Remplacement écrans, connecteurs, déblocage et réparation divers.</p></div>
-    <div class="service-card"><h3>Vente & Assemblage</h3><p>Composants, montage sur mesure et conseils personnalisés.</p></div>
+<section class="services" id="services">
+  <h2>Nos Services</h2>
+  <div class="service-list">
+    <div class="service">
+      <h3>💻 Réparation PC & Portables</h3>
+      <p>Remplacement de claviers, écrans, connecteurs, cartes mères, installation et configuration de Windows.</p>
+    </div>
+    <div class="service">
+      <h3>📱 Réparation Téléphones</h3>
+      <p>Remplacement d’écrans, connecteurs, contrôleurs d’alimentation, déblocage de comptes et mots de passe.</p>
+    </div>
+    <div class="service">
+      <h3>⚙️ Vente & Assemblage PC</h3>
+      <p>Vente de composants, montage et configuration complète selon vos besoins, conseils personnalisés.</p>
+    </div>
   </div>
 </section>
 
-<section id="gallery" class="container">
-  <h2 style="text-align:center;">Nos Réalisations</h2>
-  <div class="photo-grid">
-    <img src="photo1.png" alt="Photo1">
-    <img src="photo2.png" alt="Photo2">
-    <img src="photo3.png" alt="Photo3">
-    <img src="photo4.png" alt="Photo4">
-    <img src="photo5.png" alt="Photo5">
-    <img src="photo6.png" alt="Photo6">
+<section class="gallery" id="gallery">
+  <h2>Nos Travaux</h2>
+  <div class="gallery-images">
+    <img src="photo1.png" alt="Travail 1">
+    <img src="photo2.png" alt="Travail 2">
+    <img src="photo3.png" alt="Travail 3">
+    <img src="photo4.png" alt="Travail 4">
+    <img src="photo5.png" alt="Travail 5">
+    <img src="photo6.png" alt="Travail 6">
   </div>
 </section>
 
-<section id="brands">
-  <h2>Nos partenaires</h2>
-  <div class="logos-grid">
+<section class="brands" id="brands">
+  <h2>Marques</h2>
+  <div class="brand-logos">
     <img src="apple.png" alt="Apple">
-    <img src="asus.png" alt="Asus">
-    <img src="dell.png" alt="Dell">
     <img src="hp.png" alt="HP">
+    <img src="asus.png" alt="Asus">
+    <img src="acer.png" alt="Acer">
     <img src="lenovo.png" alt="Lenovo">
+    <img src="dell.png" alt="Dell">
   </div>
 </section>
 
-<section id="reviews" class="container">
-  <h2>Avis Clients</h2>
-  <div class="review-form">
-    <input type="text" placeholder="Votre nom" id="inputName">
-    <select id="inputRating">
-      <option value="5">★★★★★</option>
-      <option value="4">★★★★</option>
-      <option value="3">★★★</option>
-      <option value="2">★★</option>
-      <option value="1">★</option>
-    </select>
-    <textarea placeholder="Votre avis (20 caractères min)" id="inputText"></textarea>
-    <button id="btnSubmit">Ajouter Avis</button>
-    <div id="msg" style="color:#f1c40f;font-weight:700;margin-top:5px;"></div>
+<section class="reviews" id="reviews">
+  <h2>Avis de nos clients</h2>
+  <div id="reviews-container">
+    <!-- Скрипт добавит отзывы сюда -->
   </div>
-  <div class="reviews-list" id="listReviews"></div>
 </section>
 
-<section id="contact">
+<section class="contact" id="contact">
   <h2>Contact</h2>
   <p>📞 <a href="tel:+33780208155">+33 7 80 20 81 55</a></p>
-  <p>✉️ <a href="mailto:peoneers@gmail.com">peoneers@gmail.com</a></p>
-  <p>Loudéac 22600, Bretagne</p>
+  <p>📧 <a href="mailto:peoneers@gmail.com">peoneers@gmail.com</a></p>
+  <a href="mailto:peoneers@gmail.com" class="btn">Envoyer un message</a>
 </section>
 
 <footer>
@@ -326,73 +161,22 @@ footer { background:#111; color:#fff; text-align:center; padding:20px; margin-to
 </footer>
 
 <script>
-(function(){
-  const inputName=document.getElementById('inputName');
-  const inputText=document.getElementById('inputText');
-  const inputRating=document.getElementById('inputRating');
-  const btnSubmit=document.getElementById('btnSubmit');
-  const msgEl=document.getElementById('msg');
-  const listEl=document.getElementById('listReviews');
+  const reviews = [
+    { name: "Alice", date: "2025-10-01", text: "Travail rapide et efficace ! Mon PC fonctionne comme neuf." },
+    { name: "Bob", date: "2025-09-28", text: "Service très professionnel, je recommande vivement." },
+    { name: "Caroline", date: "2025-09-20", text: "Réparation de téléphone impeccable, merci !" },
+    { name: "David", date: "2025-09-15", text: "Excellente assistance pour le montage de mon PC." },
+    { name: "Émilie", date: "2025-09-10", text: "Intervention rapide et très efficace." },
+    { name: "François", date: "2025-09-05", text: "Conseils personnalisés et très professionnel." }
+  ];
 
-  function nowISO(){ return new Date().toISOString(); }
-  function saveReviews(arr){ localStorage.setItem('reviews',JSON.stringify(arr)); }
-  function loadReviews(){ return JSON.parse(localStorage.getItem('reviews')||'[]'); }
-
-  function starHTML(n){ return '★'.repeat(n)+'☆'.repeat(5-n); }
-
-  function createAvatar(name){
-    const ch=name?name[0].toUpperCase():'A';
-    const bg=['#e74c3c','#c0392b','#d35400','#2980b9','#27ae60','#8e44ad'][ch.charCodeAt(0)%6];
-    const el=document.createElement('div'); el.className='avatar'; el.textContent=ch; el.style.background=bg;
-    return el;
-  }
-
-  function escapeHtml(s){ return s?s.replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m])):''; }
-
-  function formatDate(iso){ const d=new Date(iso); return d.toLocaleDateString('fr-FR'); }
-
-  function renderReviews(){
-    const arr=loadReviews().slice().reverse();
-    listEl.innerHTML='';
-    if(!arr.length){ listEl.innerHTML='<div style="grid-column:1/-1;color:#aaa;text-align:center;padding:20px;background:#1c1c1c;border-radius:10px;">Pas encore d’avis — soyez le premier !</div>'; return; }
-    arr.forEach(r=>{
-      const card=document.createElement('div'); card.className='review-card';
-      card.appendChild(createAvatar(r.name));
-      const body=document.createElement('div'); body.style.flex='1';
-      const top=document.createElement('div'); Object.assign(top.style,{display:'flex',justifyContent:'space-between',alignItems:'center'});
-      const nameEl=document.createElement('div'); nameEl.innerHTML='<strong>'+escapeHtml(r.name||'Anonyme')+'</strong>'; nameEl.style.marginBottom='6px';
-      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#f1c40f',fontWeight:'700'}); metaEl.innerHTML=starHTML(r.rating)+'<br>'+formatDate(r.date);
-      const textEl=document.createElement('div'); Object.assign(textEl.style,{color:'#ddd',marginTop:'6px'}); textEl.textContent=r.text;
-      top.appendChild(nameEl); top.appendChild(metaEl); body.appendChild(top); body.appendChild(textEl); card.appendChild(body);
-      listEl.appendChild(card);
-    });
-  }
-
-  btnSubmit.addEventListener('click',function(){
-    const name=(inputName.value||'').trim();
-    const rating=parseInt(inputRating.value)||5;
-    const text=(inputText.value||'').trim();
-    if(text.length<20){ msgEl.textContent='Votre avis est trop court.'; return; }
-    const review={name:name||'Anonyme',rating:Math.max(1,Math.min(5,rating)),text:text,date:nowISO()};
-    const arr=loadReviews(); arr.push(review); saveReviews(arr);
-    inputName.value=''; inputRating.value='5'; inputText.value='';
-    msgEl.textContent='Merci ! Votre avis a été ajouté.';
-    renderReviews();
+  const reviewsContainer = document.getElementById('reviews-container');
+  reviews.forEach(r => {
+    const div = document.createElement('div');
+    div.className = 'review';
+    div.innerHTML = `<p>"${r.text}"</p><span>- ${r.name}, ${r.date}</span>`;
+    reviewsContainer.appendChild(div);
   });
-
-  if(loadReviews().length===0){
-    saveReviews([
-      { name:'Julien L.', rating:5, text:'Service rapide et très professionnel !', date:'2025-09-01T10:00:00Z' },
-      { name:'Sophie M.', rating:4, text:'Très contente de la réparation de mon PC.', date:'2025-09-05T15:30:00Z' },
-      { name:'Antoine P.', rating:5, text:'Réparation impeccable, je recommande !', date:'2025-09-10T09:45:00Z' },
-      { name:'Clara B.', rating:4, text:'Bon suivi et explications claires.', date:'2025-09-12T11:20:00Z' },
-      { name:'Marc D.', rating:5, text:'Professionnels et rapides, excellent service !', date:'2025-09-15T14:10:00Z' },
-      { name:'Élodie R.', rating:5, text:'Très satisfait, tout fonctionne parfaitement.', date:'2025-09-18T16:05:00Z' }
-    ]);
-  }
-
-  renderReviews();
-})();
 </script>
 
 </body>
