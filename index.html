@@ -7,8 +7,11 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
   /* Базовые стили */
-  body { font-family: 'Arial', sans-serif; margin:0; padding:0; background:#fefefe; color:#222; }
+  body { font-family: 'Arial', sans-serif; margin:0; padding:0; background: linear-gradient(135deg,#fff,#ffecec); color:#222; scroll-behavior: smooth; }
   a { text-decoration:none; }
+  img { max-width: 100%; }
+
+  /* Header */
   header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; position:sticky; top:0; z-index:100; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
   .logo { font-size:28px; font-weight:bold; color:#d32f2f; letter-spacing:2px; }
   nav a { margin-left:20px; font-weight:bold; color:#d32f2f; transition:0.3s; }
@@ -17,45 +20,46 @@
   /* Hero */
   #hero { 
     background: linear-gradient(135deg, #ff3d00, #ff1744);
-    color:#fff; text-align:center; padding:80px 20px;
+    color:#fff; text-align:center; padding:120px 20px;
+    display:flex; flex-direction:column; justify-content:center; align-items:center;
   }
-  #hero h1 { font-size:42px; margin-bottom:15px; }
-  #hero p { font-size:18px; margin-bottom:25px; }
+  #hero h1 { font-size:48px; margin-bottom:20px; }
+  #hero p { font-size:20px; margin-bottom:30px; max-width:700px; }
   .btn { display:inline-block; background:#fff; color:#ff1744; font-weight:bold; padding:15px 30px; border-radius:10px; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
   .btn:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.3); }
 
   /* Services */
-  section { padding:60px 20px; max-width:1100px; margin:0 auto; }
-  h2 { font-size:32px; color:#d32f2f; margin-bottom:30px; text-align:center; }
+  section { padding:80px 20px; max-width:1100px; margin:0 auto; }
+  h2 { font-size:36px; color:#d32f2f; margin-bottom:40px; text-align:center; }
   .services { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
-  .service { flex:1 1 300px; background:#fff; padding:25px; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
-  .service i { font-size:40px; color:#ff1744; margin-bottom:15px; }
-  .service h3 { font-size:22px; margin-bottom:15px; }
+  .service { flex:1 1 300px; background:#fff; padding:30px; border-radius:20px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+  .service i { font-size:50px; color:#ff1744; margin-bottom:15px; }
+  .service h3 { font-size:24px; margin-bottom:15px; }
   .service p { line-height:1.5; }
-
-  .service:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+  .service:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 20px 35px rgba(0,0,0,0.25); }
 
   /* Brands */
   .brands { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:center; margin:50px 0; }
-  .brands img { max-height:60px; transition:0.3s; filter:grayscale(0.7); }
-  .brands img:hover { transform:scale(1.2); filter:none; }
+  .brands img { max-height:80px; transition: transform 0.5s, filter 0.5s; filter:grayscale(0.7); }
+  .brands img:hover { transform: scale(1.3); filter:none; }
 
   /* Testimonials */
   .testimonials { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
-  .testimonial { flex:1 1 300px; background: linear-gradient(135deg, #ffe0e0, #ffebee); border-radius:15px; padding:20px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:0.3s; }
-  .testimonial:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
-  .testimonial p { font-style:italic; margin-bottom:10px; }
-  .testimonial h4 { color:#d32f2f; }
+  .testimonial { flex:1 1 300px; background: linear-gradient(135deg,#ffe0e0,#ffebee); border-radius:20px; padding:25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition: transform 0.5s ease, box-shadow 0.5s ease; }
+  .testimonial:hover { transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+  .testimonial p { font-style:italic; margin-bottom:15px; }
+  .testimonial h4 { color:#d32f2f; font-weight:bold; }
 
   /* Contact */
   .contact { text-align:center; margin-top:20px; }
   .contact a { display:inline-block; margin:10px; color:#d32f2f; font-weight:bold; transition:0.3s; }
   .contact a:hover { color:#ff5722; }
+  .contact .btn { margin-top:20px; }
 
   /* Footer */
-  footer { text-align:center; padding:20px; background:#f5f5f5; border-top:2px solid #d32f2f; font-size:14px; color:#555; }
+  footer { text-align:center; padding:30px; background:#f5f5f5; border-top:3px solid #d32f2f; font-size:14px; color:#555; }
 
-  @media(max-width:768px){ .services,.testimonials { flex-direction:column; } nav { margin-top:10px; } }
+  @media(max-width:768px){ .services,.testimonials { flex-direction:column; } nav { margin-top:10px; } #hero h1 { font-size:36px; } #hero p { font-size:18px; } }
 </style>
 </head>
 <body>
@@ -104,12 +108,12 @@
   <section id="brands">
     <h2>Marques que nous supportons</h2>
     <div class="brands">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/2/29/HP_logo_2012.svg" alt="HP">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg" alt="Apple">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/53/Lenovo_logo.svg" alt="Lenovo">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/55/Acer_2011_logo.svg" alt="Acer">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/5/5b/Asus_Logo.svg" alt="Asus">
-      <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Dell_Logo.svg" alt="Dell">
+      <img src="images/hp.png" alt="HP">
+      <img src="images/apple.png" alt="Apple">
+      <img src="images/lenovo.png" alt="Lenovo">
+      <img src="images/acer.png" alt="Acer">
+      <img src="images/asus.png" alt="Asus">
+      <img src="images/dell.png" alt="Dell">
     </div>
   </section>
 
