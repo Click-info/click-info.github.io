@@ -5,96 +5,234 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Click Informatique</title>
 <style>
-  /* ===== Общие стили ===== */
-  @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
 
-  body {
-    margin:0;
-    font-family: 'Orbitron', sans-serif;
-    background:#f5f5f5;
-    color:#222;
-    scroll-behavior: smooth;
-  }
+body {
+  margin:0;
+  font-family:'Orbitron', sans-serif;
+  background:#121212;
+  color:#eee;
+  scroll-behavior:smooth;
+}
 
-  a { text-decoration:none; color:inherit; }
+a { text-decoration:none; color:inherit; }
 
-  h1,h2,h3 { margin:0; }
+h1,h2,h3 { margin:0; }
 
-  section { padding:60px 20px; }
+section { padding:60px 20px; }
 
-  .container { max-width:1100px; margin:0 auto; }
+.container { max-width:1100px; margin:0 auto; }
 
-  /* ===== Шапка ===== */
-  header {
-    background:#111;
-    color:#fff;
-    padding:20px;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    position:sticky;
-    top:0;
-    z-index:1000;
-  }
+/* ===== Header ===== */
+header {
+  background:#111;
+  color:#fff;
+  padding:20px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  position:sticky;
+  top:0;
+  z-index:1000;
+  box-shadow:0 4px 10px rgba(0,0,0,0.7);
+}
 
-  header .logo { font-size:1.8em; font-weight:700; color:#e74c3c; }
-  nav a { margin-left:20px; color:#fff; font-weight:700; transition:0.3s; }
-  nav a:hover { color:#e74c3c; }
+header .logo { font-size:1.8em; font-weight:700; color:#e74c3c; text-shadow:0 0 8px #e74c3c;}
+nav a { margin-left:20px; font-weight:700; transition:0.3s; }
+nav a:hover { color:#f1c40f; text-shadow:0 0 6px #f1c40f; }
 
-  /* ===== Hero ===== */
-  .hero {
-    background:#222 url('') no-repeat center/cover;
-    color:#fff;
-    text-align:center;
-    padding:120px 20px;
-  }
-  .hero h1 { font-size:2.8em; color:#e74c3c; margin-bottom:20px; }
-  .hero p { font-size:1.2em; max-width:700px; margin:0 auto 30px; }
-  .hero .btn { background:#e74c3c; color:#fff; padding:15px 30px; border-radius:8px; font-weight:700; margin:0 10px; display:inline-block; transition:0.3s; }
-  .hero .btn:hover { background:#c0392b; }
+/* ===== Hero ===== */
+.hero {
+  background: linear-gradient(-45deg,#111,#222,#333,#111);
+  background-size:400% 400%;
+  animation: gradientBG 15s ease infinite;
+  color:#fff;
+  text-align:center;
+  padding:120px 20px;
+}
 
-  /* ===== Услуги ===== */
-  #services .service-cards { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .service-card { background:#fff; padding:20px; border-radius:12px; box-shadow:0 4px 15px rgba(0,0,0,0.1); transition:0.3s; }
-  .service-card:hover { transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.15); }
-  .service-card h3 { color:#e74c3c; margin-bottom:10px; }
-  .service-card p { font-size:0.95em; }
+@keyframes gradientBG{
+  0%{background-position:0% 50%;}
+  50%{background-position:100% 50%;}
+  100%{background-position:0% 50%;}
+}
 
-  /* ===== Галерея фото ===== */
-  #gallery .photo-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:15px; }
-  #gallery .photo-grid img { width:100%; height:150px; object-fit:cover; border-radius:10px; transition:0.3s; }
-  #gallery .photo-grid img:hover { transform:scale(1.05); }
+.hero h1 {
+  font-size:3em;
+  color:#e74c3c;
+  text-shadow:0 0 15px #e74c3c,0 0 25px #f1c40f;
+  margin-bottom:20px;
+}
 
-  /* ===== Логотипы ===== */
-  #brands { text-align:center; }
-  #brands h2 { color:#e74c3c; margin-bottom:30px; }
-  .logos-grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(120px,1fr)); gap:20px; justify-items:center; align-items:center; max-width:800px; margin:0 auto; }
-  .logos-grid img { max-width:100px; max-height:60px; object-fit:contain; }
+.hero p {
+  font-size:1.2em;
+  max-width:700px;
+  margin:0 auto 30px;
+}
 
-  /* ===== Отзывы ===== */
-  #reviews h2 { text-align:center; color:#e74c3c; margin-bottom:40px; }
-  .review-form { display:flex; flex-direction:column; max-width:600px; margin:0 auto 40px; gap:10px; }
-  .review-form input, .review-form textarea, .review-form select { padding:10px; border-radius:6px; border:1px solid #ccc; width:100%; font-family:inherit; font-size:1em; }
-  .review-form button { background:#e74c3c; color:#fff; padding:12px; font-weight:700; border:none; border-radius:8px; cursor:pointer; transition:0.3s; }
-  .review-form button:hover { background:#c0392b; }
+.hero .btn {
+  background:linear-gradient(45deg,#e74c3c,#f1c40f);
+  color:#fff;
+  padding:15px 30px;
+  border-radius:12px;
+  font-weight:700;
+  margin:0 10px;
+  display:inline-block;
+  transition:0.5s;
+  box-shadow:0 0 10px #e74c3c,0 0 20px #f1c40f;
+}
 
-  .reviews-list { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:20px; }
-  .review-card { display:flex; background:#fff; padding:15px; border-radius:10px; box-shadow:0 3px 10px rgba(0,0,0,0.1); align-items:flex-start; }
-  .review-card div { flex:1; }
-  .review-card .review-text { margin-top:6px; color:#333; font-size:0.95em; }
-  .review-card .avatar { width:48px; height:48px; border-radius:50%; background:#e74c3c; color:#fff; font-weight:700; display:flex; align-items:center; justify-content:center; margin-right:10px; flex-shrink:0; }
+.hero .btn:hover{
+  transform:scale(1.1);
+  box-shadow:0 0 25px #e74c3c,0 0 35px #f1c40f;
+}
 
-  /* ===== Контакты ===== */
-  #contact { text-align:center; }
-  #contact h2 { color:#e74c3c; margin-bottom:20px; }
-  #contact p { margin:5px 0; }
-  #contact a { color:#e74c3c; font-weight:700; }
+/* ===== Services ===== */
+#services .service-cards {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
 
-  /* ===== Футер ===== */
-  footer { background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
+.service-card {
+  background:#1c1c1c;
+  padding:20px;
+  border-radius:15px;
+  box-shadow:0 4px 15px rgba(0,0,0,0.5);
+  transition:0.5s;
+}
 
-  /* ===== Адаптив ===== */
-  @media(max-width:768px){ .hero h1{font-size:2em;} .hero p{font-size:1em;} }
+.service-card:hover{
+  transform:translateY(-10px) scale(1.03);
+  box-shadow:0 6px 25px rgba(241,196,15,0.6);
+}
+
+.service-card h3 { color:#f1c40f; margin-bottom:10px; text-shadow:0 0 5px #f1c40f; }
+.service-card p { font-size:0.95em; color:#ddd; }
+
+/* ===== Gallery ===== */
+#gallery .photo-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(180px,1fr));
+  gap:15px;
+}
+
+#gallery .photo-grid img {
+  width:100%;
+  height:150px;
+  object-fit:cover;
+  border-radius:12px;
+  transition:0.5s;
+  box-shadow:0 0 10px rgba(241,196,15,0.5);
+}
+
+#gallery .photo-grid img:hover{
+  transform:scale(1.1) rotate(2deg);
+  box-shadow:0 0 20px #f1c40f;
+}
+
+/* ===== Logos ===== */
+#brands { text-align:center; }
+#brands h2 { color:#e74c3c; margin-bottom:30px; text-shadow:0 0 10px #e74c3c; }
+.logos-grid {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+  gap:20px;
+  justify-items:center;
+  align-items:center;
+  max-width:800px;
+  margin:0 auto;
+}
+.logos-grid img {
+  max-width:100px;
+  max-height:60px;
+  object-fit:contain;
+  transition:0.5s;
+}
+.logos-grid img:hover {
+  transform:scale(1.2);
+  filter:drop-shadow(0 0 10px #f1c40f);
+}
+
+/* ===== Reviews ===== */
+#reviews h2 { text-align:center; color:#e74c3c; margin-bottom:40px; text-shadow:0 0 10px #e74c3c; }
+.review-form { display:flex; flex-direction:column; max-width:600px; margin:0 auto 40px; gap:10px; }
+.review-form input, .review-form textarea, .review-form select {
+  padding:10px;
+  border-radius:8px;
+  border:1px solid #555;
+  width:100%;
+  font-family:inherit;
+  font-size:1em;
+  background:#222;
+  color:#eee;
+}
+.review-form button {
+  background:linear-gradient(45deg,#e74c3c,#f1c40f);
+  color:#fff;
+  padding:12px;
+  font-weight:700;
+  border:none;
+  border-radius:12px;
+  cursor:pointer;
+  transition:0.5s;
+}
+.review-form button:hover {
+  transform:scale(1.05);
+  box-shadow:0 0 20px #f1c40f;
+}
+
+.reviews-list {
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:20px;
+}
+
+.review-card {
+  display:flex;
+  background:#1c1c1c;
+  padding:15px;
+  border-radius:12px;
+  box-shadow:0 3px 15px rgba(241,196,15,0.4);
+  align-items:flex-start;
+  transform:translateY(30px);
+  opacity:0;
+  animation: fadeInUp 0.8s forwards;
+}
+
+@keyframes fadeInUp{
+  to{transform:translateY(0); opacity:1;}
+}
+
+.review-card .avatar {
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:#e74c3c;
+  color:#fff;
+  font-weight:700;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  margin-right:10px;
+  flex-shrink:0;
+}
+
+/* ===== Contact ===== */
+#contact { text-align:center; }
+#contact h2 { color:#e74c3c; margin-bottom:20px; text-shadow:0 0 8px #e74c3c; }
+#contact p { margin:5px 0; }
+#contact a { color:#f1c40f; font-weight:700; }
+
+/* ===== Footer ===== */
+footer { background:#111; color:#fff; text-align:center; padding:20px; margin-top:40px; font-size:0.9em; }
+
+/* ===== Media ===== */
+@media(max-width:768px){
+  .hero h1{font-size:2em;}
+  .hero p{font-size:1em;}
+}
+
 </style>
 </head>
 <body>
@@ -112,31 +250,22 @@
 
 <section class="hero">
   <h1>Réparation & Maintenance Informatique</h1>
-  <p>Réparation d’ordinateurs portables et PC fixes, téléphones, vente de composants et assemblage sur mesure.</p>
+  <p>Ordinateurs portables, PC fixes, téléphones, vente de composants et assemblage sur mesure.</p>
   <a href="#contact" class="btn">Contacter</a>
   <a href="#services" class="btn">Nos Services</a>
 </section>
 
 <section id="services" class="container">
-  <h2 style="color:#e74c3c;margin-bottom:30px;text-align:center;">Nos Services</h2>
+  <h2 style="text-align:center;">Nos Services</h2>
   <div class="service-cards">
-    <div class="service-card">
-      <h3>Ordinateurs portables & PC fixes</h3>
-      <p>Remplacement de claviers, écrans, connecteurs et composants, réparation de cartes mères, installation et configuration de Windows.</p>
-    </div>
-    <div class="service-card">
-      <h3>Téléphones</h3>
-      <p>Remplacement d’écrans et connecteurs de charge, réparation de contrôleurs, déblocage et suppression de mots de passe.</p>
-    </div>
-    <div class="service-card">
-      <h3>Vente & Assemblage PC</h3>
-      <p>Vente de composants, montage sur mesure, configuration et conseils personnalisés pour votre matériel informatique.</p>
-    </div>
+    <div class="service-card"><h3>Ordinateurs & PC fixes</h3><p>Remplacement composants, réparation cartes mères, installation Windows.</p></div>
+    <div class="service-card"><h3>Téléphones</h3><p>Remplacement écrans, connecteurs, déblocage et réparation divers.</p></div>
+    <div class="service-card"><h3>Vente & Assemblage</h3><p>Composants, montage sur mesure et conseils personnalisés.</p></div>
   </div>
 </section>
 
 <section id="gallery" class="container">
-  <h2 style="color:#e74c3c;text-align:center;margin-bottom:30px;">Nos Réalisations</h2>
+  <h2 style="text-align:center;">Nos Réalisations</h2>
   <div class="photo-grid">
     <img src="photo1.png" alt="Photo1">
     <img src="photo2.png" alt="Photo2">
@@ -169,9 +298,9 @@
       <option value="2">★★</option>
       <option value="1">★</option>
     </select>
-    <textarea placeholder="Votre avis (au moins 20 caractères)" id="inputText"></textarea>
+    <textarea placeholder="Votre avis (20 caractères min)" id="inputText"></textarea>
     <button id="btnSubmit">Ajouter Avis</button>
-    <div id="msg" style="color:#c0392b;font-weight:700;margin-top:5px;"></div>
+    <div id="msg" style="color:#f1c40f;font-weight:700;margin-top:5px;"></div>
   </div>
   <div class="reviews-list" id="listReviews"></div>
 </section>
@@ -217,15 +346,15 @@
   function renderReviews(){
     const arr=loadReviews().slice().reverse();
     listEl.innerHTML='';
-    if(!arr.length){ listEl.innerHTML='<div style="grid-column:1/-1;color:#666;text-align:center;padding:20px;background:#fff;border-radius:10px;">Pas encore d’avis — soyez le premier !</div>'; return; }
+    if(!arr.length){ listEl.innerHTML='<div style="grid-column:1/-1;color:#aaa;text-align:center;padding:20px;background:#1c1c1c;border-radius:10px;">Pas encore d’avis — soyez le premier !</div>'; return; }
     arr.forEach(r=>{
       const card=document.createElement('div'); card.className='review-card';
       card.appendChild(createAvatar(r.name));
       const body=document.createElement('div'); body.style.flex='1';
       const top=document.createElement('div'); Object.assign(top.style,{display:'flex',justifyContent:'space-between',alignItems:'center'});
       const nameEl=document.createElement('div'); nameEl.innerHTML='<strong>'+escapeHtml(r.name||'Anonyme')+'</strong>'; nameEl.style.marginBottom='6px';
-      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#e74c3c',fontWeight:'700'}); metaEl.innerHTML=starHTML(r.rating)+'<br>'+formatDate(r.date);
-      const textEl=document.createElement('div'); Object.assign(textEl.style,{color:'#444',marginTop:'6px'}); textEl.textContent=r.text;
+      const metaEl=document.createElement('div'); Object.assign(metaEl.style,{fontSize:'14px',color:'#f1c40f',fontWeight:'700'}); metaEl.innerHTML=starHTML(r.rating)+'<br>'+formatDate(r.date);
+      const textEl=document.createElement('div'); Object.assign(textEl.style,{color:'#ddd',marginTop:'6px'}); textEl.textContent=r.text;
       top.appendChild(nameEl); top.appendChild(metaEl); body.appendChild(top); body.appendChild(textEl); card.appendChild(body);
       listEl.appendChild(card);
     });
