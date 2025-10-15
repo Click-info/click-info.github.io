@@ -1,47 +1,62 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>CLICK INFORMATIQUE — Réparation & Services</title>
-  <style>
-    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff; color:#222; }
-    a { text-decoration:none; color:inherit; }
-    header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#fff; border-bottom:2px solid #d32f2f; position:sticky; top:0; z-index:100; }
-    header .logo { font-size:28px; font-weight:bold; color:#d32f2f; }
-    nav a { margin-left:20px; font-weight:bold; color:#d32f2f; transition:0.3s; }
-    nav a:hover { color:#b71c1c; }
-    main { max-width:1100px; margin:50px auto; padding:0 20px; }
-    h1, h2 { color:#d32f2f; margin-bottom:15px; }
-    h1 { font-size:36px; }
-    h2 { font-size:28px; }
-    p { margin-bottom:10px; line-height:1.5; }
-    .btn { display:inline-block; background:#d32f2f; color:#fff; padding:12px 25px; border-radius:8px; margin-top:15px; font-weight:bold; transition:0.3s; }
-    .btn:hover { background:#b71c1c; }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CLICK INFORMATIQUE — Réparation & Services</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+  /* Базовые стили */
+  body { font-family: 'Arial', sans-serif; margin:0; padding:0; background:#fefefe; color:#222; }
+  a { text-decoration:none; }
+  header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; position:sticky; top:0; z-index:100; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
+  .logo { font-size:28px; font-weight:bold; color:#d32f2f; letter-spacing:2px; }
+  nav a { margin-left:20px; font-weight:bold; color:#d32f2f; transition:0.3s; }
+  nav a:hover { color:#ff5722; }
 
-    /* Services */
-    .services { display:flex; flex-wrap:wrap; gap:25px; margin-top:20px; }
-    .service { flex:1 1 300px; border:1px solid #ddd; border-radius:10px; padding:20px; transition:0.3s; background:#fdfdfd; }
-    .service:hover { box-shadow:0 4px 15px rgba(0,0,0,0.15); }
+  /* Hero */
+  #hero { 
+    background: linear-gradient(135deg, #ff3d00, #ff1744);
+    color:#fff; text-align:center; padding:80px 20px;
+  }
+  #hero h1 { font-size:42px; margin-bottom:15px; }
+  #hero p { font-size:18px; margin-bottom:25px; }
+  .btn { display:inline-block; background:#fff; color:#ff1744; font-weight:bold; padding:15px 30px; border-radius:10px; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
+  .btn:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.3); }
 
-    /* Brands */
-    .brands { display:flex; flex-wrap:wrap; gap:20px; justify-content:center; align-items:center; margin:30px 0; }
-    .brands img { max-height:60px; filter:grayscale(1); transition:0.3s; }
-    .brands img:hover { filter:none; }
+  /* Services */
+  section { padding:60px 20px; max-width:1100px; margin:0 auto; }
+  h2 { font-size:32px; color:#d32f2f; margin-bottom:30px; text-align:center; }
+  .services { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+  .service { flex:1 1 300px; background:#fff; padding:25px; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
+  .service i { font-size:40px; color:#ff1744; margin-bottom:15px; }
+  .service h3 { font-size:22px; margin-bottom:15px; }
+  .service p { line-height:1.5; }
 
-    /* Testimonials */
-    .testimonials { display:flex; flex-wrap:wrap; gap:20px; }
-    .testimonial { flex:1 1 300px; border:1px solid #ddd; border-radius:10px; padding:20px; background:#f9f9f9; }
-    .testimonial p { font-style:italic; }
-    .testimonial h4 { margin-top:10px; color:#d32f2f; }
+  .service:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
 
-    /* Contact */
-    .contact a { display:block; margin-bottom:8px; font-weight:bold; color:#d32f2f; }
+  /* Brands */
+  .brands { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:center; margin:50px 0; }
+  .brands img { max-height:60px; transition:0.3s; filter:grayscale(0.7); }
+  .brands img:hover { transform:scale(1.2); filter:none; }
 
-    footer { background:#f5f5f5; text-align:center; padding:20px; font-size:14px; color:#555; border-top:2px solid #d32f2f; }
+  /* Testimonials */
+  .testimonials { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
+  .testimonial { flex:1 1 300px; background: linear-gradient(135deg, #ffe0e0, #ffebee); border-radius:15px; padding:20px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition:0.3s; }
+  .testimonial:hover { transform:translateY(-5px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
+  .testimonial p { font-style:italic; margin-bottom:10px; }
+  .testimonial h4 { color:#d32f2f; }
 
-    @media(max-width:768px){ .services,.testimonials { flex-direction:column; } nav { margin-top:10px; } }
-  </style>
+  /* Contact */
+  .contact { text-align:center; margin-top:20px; }
+  .contact a { display:inline-block; margin:10px; color:#d32f2f; font-weight:bold; transition:0.3s; }
+  .contact a:hover { color:#ff5722; }
+
+  /* Footer */
+  footer { text-align:center; padding:20px; background:#f5f5f5; border-top:2px solid #d32f2f; font-size:14px; color:#555; }
+
+  @media(max-width:768px){ .services,.testimonials { flex-direction:column; } nav { margin-top:10px; } }
+</style>
 </head>
 <body>
 
@@ -58,9 +73,8 @@
 <main>
   <!-- Hero -->
   <section id="hero">
-    <h1>Réparation et maintenance informatique à Loudéac</h1>
-    <p>Besoin d’aide avec votre ordinateur ou votre téléphone ? J’interviens rapidement pour tout type de panne, remplacement de pièces ou configuration système.</p>
-    <p>🔧 Service rapide – Diagnostic gratuit – Garantie sur les réparations</p>
+    <h1>Réparation & Maintenance Informatique à Loudéac</h1>
+    <p>Ordinateurs, téléphones et composants. Service rapide, fiable et professionnel !</p>
     <a href="#contact" class="btn">Contacter</a>
   </section>
 
@@ -69,16 +83,19 @@
     <h2>Nos Services</h2>
     <div class="services">
       <div class="service">
-        <h3>💻 Réparation PC & Ordinateurs portables</h3>
-        <p>Remplacement de claviers, écrans, connecteurs et composants. Réparation de cartes mères, installation et configuration Windows, nettoyage et optimisation.</p>
+        <i class="fas fa-laptop"></i>
+        <h3>Réparation PC & Portables</h3>
+        <p>Claviers, écrans, connecteurs, cartes mères. Installation et optimisation Windows.</p>
       </div>
       <div class="service">
-        <h3>📱 Réparation téléphones</h3>
-        <p>Remplacement d’écrans, connecteurs de charge, réparation de contrôleurs d’alimentation, déblocage d’appareils et suppression de mots de passe.</p>
+        <i class="fas fa-mobile-alt"></i>
+        <h3>Réparation Téléphones</h3>
+        <p>Écrans, connecteurs, contrôleurs d’alimentation, déblocage et suppression de mots de passe.</p>
       </div>
       <div class="service">
-        <h3>⚙️ Assemblage & Vente de composants</h3>
-        <p>Vente de pièces détachées, montage et configuration complète d’ordinateurs selon vos besoins, conseils personnalisés pour le choix du matériel.</p>
+        <i class="fas fa-cogs"></i>
+        <h3>Assemblage & Vente PC</h3>
+        <p>Vente de composants, montage et configuration complète selon vos besoins.</p>
       </div>
     </div>
   </section>
@@ -98,7 +115,7 @@
 
   <!-- Testimonials -->
   <section id="testimonials">
-    <h2>Avis clients</h2>
+    <h2>Avis Clients</h2>
     <div class="testimonials">
       <div class="testimonial">
         <p>"Service rapide et très professionnel ! Mon PC fonctionne comme neuf."</p>
@@ -119,8 +136,8 @@
   <section id="contact">
     <h2>Contact</h2>
     <div class="contact">
-      <a href="tel:+33780208155">📞 +33 7 80 20 81 55</a>
-      <a href="mailto:peoneers@gmail.com">📧 peoneers@gmail.com</a>
+      <a href="tel:+33780208155"><i class="fas fa-phone"></i> +33 7 80 20 81 55</a>
+      <a href="mailto:peoneers@gmail.com"><i class="fas fa-envelope"></i> peoneers@gmail.com</a>
       <p>Loudéac 22600, Bretagne</p>
       <a href="mailto:peoneers@gmail.com" class="btn">Envoyer un message</a>
     </div>
