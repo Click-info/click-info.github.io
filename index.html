@@ -1,74 +1,58 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CLICK INFORMATIQUE — Réparation & Services</title>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-body { font-family: 'Arial', sans-serif; margin:0; padding:0; background:#fff; color:#222; scroll-behavior: smooth; }
-a { text-decoration:none; }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CLICK INFORMATIQUE</title>
+  <style>
+    /* Сброс и базовые стили */
+    * {margin:0; padding:0; box-sizing:border-box; font-family: 'Arial', sans-serif;}
+    body {background:#fff; color:#333;}
+    a {text-decoration:none; color: inherit;}
+    h1,h2,h3 {color:#c0392b;}
 
-/* Header */
-header { display:flex; justify-content:space-between; align-items:center; padding:20px 40px; position:sticky; top:0; z-index:100; background:#fff; box-shadow:0 2px 10px rgba(0,0,0,0.1); }
-.logo { font-size:28px; font-weight:bold; color:#d32f2f; letter-spacing:2px; }
-nav a { margin-left:20px; font-weight:bold; color:#d32f2f; transition:0.3s; }
-nav a:hover { color:#ff7043; }
+    /* Шапка */
+    header {display:flex; justify-content:space-between; align-items:center; padding:20px 40px; background:#f8f8f8; box-shadow:0 2px 6px rgba(0,0,0,0.1);}
+    .logo {font-size:1.8em; font-weight:bold; color:#c0392b;}
+    nav a {margin-left:20px; font-weight:bold; color:#333; transition:color 0.3s;}
+    nav a:hover {color:#c0392b;}
 
-/* Hero */
-#hero { 
-  background: linear-gradient(135deg, #f44336, #e53935);
-  color:#fff; text-align:center; padding:120px 20px;
-  display:flex; flex-direction:column; justify-content:center; align-items:center;
-}
-#hero h1 { font-size:48px; margin-bottom:20px; }
-#hero p { font-size:20px; margin-bottom:30px; max-width:700px; }
-.btn { display:inline-block; background:#fff; color:#d32f2f; font-weight:bold; padding:15px 30px; border-radius:10px; transition:0.3s; box-shadow:0 4px 15px rgba(0,0,0,0.2); }
-.btn:hover { transform:translateY(-3px); box-shadow:0 6px 20px rgba(0,0,0,0.3); }
+    /* Hero */
+    .hero {padding:80px 20px; text-align:center; background:#fff;}
+    .hero h1 {font-size:2.5em; margin-bottom:20px;}
+    .hero p {font-size:1.2em; margin-bottom:30px;}
+    .btn {display:inline-block; padding:12px 30px; margin:5px; background:#c0392b; color:#fff; border-radius:8px; transition:0.3s;}
+    .btn:hover {background:#e74c3c;}
 
-/* Services */
-section { padding:80px 20px; max-width:1100px; margin:0 auto; }
-h2 { font-size:36px; color:#d32f2f; margin-bottom:40px; text-align:center; }
-.services { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
-.service { flex:1 1 300px; background:#fff; padding:30px; border-radius:20px; box-shadow:0 6px 20px rgba(0,0,0,0.1); text-align:center; transition:0.3s; }
-.service i { font-size:50px; color:#d32f2f; margin-bottom:15px; }
-.service h3 { font-size:24px; margin-bottom:15px; }
-.service p { line-height:1.5; }
-.service:hover { transform:translateY(-10px) scale(1.05); box-shadow:0 20px 35px rgba(0,0,0,0.25); }
+    /* Services */
+    section {padding:60px 20px; max-width:1200px; margin:0 auto;}
+    .services-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(280px,1fr)); gap:30px;}
+    .service {padding:20px; border:1px solid #ddd; border-radius:10px; transition:transform 0.3s, box-shadow 0.3s;}
+    .service:hover {transform:translateY(-5px); box-shadow:0 6px 20px rgba(0,0,0,0.1);}
+    .service h3 {margin-bottom:10px; color:#c0392b;}
+    .service p {color:#555;}
 
-/* Gallery */
-.gallery { display:flex; flex-wrap:wrap; justify-content:center; gap:20px; margin:50px 0; }
-.gallery img { width:300px; border-radius:15px; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition: transform 0.3s; cursor:pointer; }
-.gallery img:hover { transform: scale(1.05); }
+    /* Gallery */
+    .gallery h2 {text-align:center; margin-bottom:30px;}
+    .gallery-grid {display:grid; grid-template-columns:repeat(auto-fit, minmax(200px,1fr)); gap:15px;}
+    .gallery-grid img {width:100%; height:auto; border-radius:10px; box-shadow:0 4px 10px rgba(0,0,0,0.2); transition:transform 0.3s;}
+    .gallery-grid img:hover {transform:scale(1.05);}
 
-/* Brands */
-.brands { display:flex; flex-wrap:wrap; gap:30px; justify-content:center; align-items:center; margin:50px 0; }
-.brands img { max-height:80px; margin:10px; transition: transform 0.5s, filter 0.5s; filter:grayscale(0.5); }
-.brands img:hover { transform: scale(1.3); filter:none; }
+    /* Logos */
+    .brands {display:flex; justify-content:center; flex-wrap:wrap; gap:20px; margin:40px 0;}
+    .brands img {height:50px; transition:transform 0.3s;}
+    .brands img:hover {transform:scale(1.2);}
 
-/* Testimonials */
-.testimonials { display:flex; flex-wrap:wrap; gap:25px; justify-content:center; }
-.testimonial { flex:1 1 300px; background: linear-gradient(135deg,#ffe0e0,#ffebee); border-radius:20px; padding:25px; text-align:center; box-shadow:0 6px 20px rgba(0,0,0,0.1); transition: transform 0.5s ease, box-shadow 0.5s ease; }
-.testimonial:hover { transform:translateY(-10px); box-shadow:0 12px 25px rgba(0,0,0,0.2); }
-.testimonial p { font-style:italic; margin-bottom:15px; }
-.testimonial h4 { color:#d32f2f; font-weight:bold; }
+    /* Testimonials */
+    .testimonials {background:#f8f8f8; padding:60px 20px; text-align:center;}
+    .testimonial {max-width:700px; margin:0 auto 30px; font-style:italic; color:#555;}
+    .testimonial strong {color:#c0392b;}
 
-/* Contact */
-.contact { text-align:center; margin-top:20px; }
-.contact a { display:inline-block; margin:10px; color:#d32f2f; font-weight:bold; transition:0.3s; }
-.contact a:hover { color:#ff7043; }
-.contact .btn { margin-top:20px; }
-
-/* Footer */
-footer { text-align:center; padding:30px; background:#f5f5f5; border-top:3px solid #d32f2f; font-size:14px; color:#555; }
-
-@media(max-width:768px){ 
-  .services,.testimonials,.gallery { flex-direction:column; } 
-  nav { margin-top:10px; } 
-  #hero h1 { font-size:36px; } 
-  #hero p { font-size:18px; } 
-}
-</style>
+    /* Contact */
+    .contact {text-align:center;}
+    .contact p {margin:10px 0; font-weight:bold;}
+    footer {background:#333; color:#fff; text-align:center; padding:20px; margin-top:40px;}
+  </style>
 </head>
 <body>
 
@@ -76,99 +60,71 @@ footer { text-align:center; padding:30px; background:#f5f5f5; border-top:3px sol
   <div class="logo">CLICK INFORMATIQUE</div>
   <nav>
     <a href="#services">Services</a>
-    <a href="#gallery">Galerie</a>
-    <a href="#brands">Marques</a>
+    <a href="#gallery">Réalisations</a>
     <a href="#testimonials">Avis</a>
     <a href="#contact">Contact</a>
   </nav>
 </header>
 
-<main>
-  <!-- Hero -->
-  <section id="hero">
-    <h1>Réparation & Maintenance Informatique à Loudéac</h1>
-    <p>Ordinateurs, téléphones et composants. Service rapide, fiable et professionnel !</p>
-    <a href="#contact" class="btn">Contacter</a>
-  </section>
+<section class="hero">
+  <h1>Réparation et maintenance informatique à Loudéac</h1>
+  <p>Réparation d’ordinateurs, téléphones, assemblage et vente de composants. Intervention rapide et professionnelle.</p>
+  <a href="#contact" class="btn">Contacter</a>
+  <a href="#services" class="btn" style="background:#555;">Voir Services</a>
+</section>
 
-  <!-- Services -->
-  <section id="services">
-    <h2>Nos Services</h2>
-    <div class="services">
-      <div class="service">
-        <i class="fas fa-laptop"></i>
-        <h3>Réparation PC & Portables</h3>
-        <p>Claviers, écrans, connecteurs, cartes mères. Installation et optimisation Windows.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-mobile-alt"></i>
-        <h3>Réparation Téléphones</h3>
-        <p>Écrans, connecteurs, contrôleurs d’alimentation, déblocage et suppression de mots de passe.</p>
-      </div>
-      <div class="service">
-        <i class="fas fa-cogs"></i>
-        <h3>Assemblage & Vente PC</h3>
-        <p>Vente de composants, montage et configuration complète selon vos besoins.</p>
-      </div>
+<section id="services">
+  <h2 style="text-align:center; margin-bottom:40px;">Nos Services</h2>
+  <div class="services-grid">
+    <div class="service">
+      <h3>💻 Réparation PC et portables</h3>
+      <p>Remplacement de claviers, écrans, connecteurs, cartes mères et configuration Windows.</p>
     </div>
-  </section>
+    <div class="service">
+      <h3>📱 Réparation Téléphones</h3>
+      <p>Remplacement d’écrans, connecteurs, réparation contrôleurs et déblocage d’appareils.</p>
+    </div>
+    <div class="service">
+      <h3>⚙️ Vente & Assemblage</h3>
+      <p>Vente de composants, montage complet de PC et conseils personnalisés pour votre matériel.</p>
+    </div>
+  </div>
+</section>
 
-  <!-- Gallery -->
-  <section id="gallery">
-    <h2>Galerie</h2>
-    <div class="gallery">
-      <img src="1.jpg" alt="Photo 1">
-      <img src="2.jpg" alt="Photo 2">
-      <img src="3.jpg" alt="Photo 3">
-      <img src="4.jpg" alt="Photo 4">
-      <img src="5.jpg" alt="Photo 5">
-      <img src="6.jpg" alt="Photo 6">
-    </div>
-  </section>
+<section id="gallery" class="gallery">
+  <h2>Mes Réalisations</h2>
+  <div class="gallery-grid">
+    <img src="1.png" alt="Photo 1">
+    <img src="2.png" alt="Photo 2">
+    <img src="3.png" alt="Photo 3">
+    <img src="4.png" alt="Photo 4">
+    <img src="5.png" alt="Photo 5">
+    <img src="6.png" alt="Photo 6">
+  </div>
+</section>
 
-  <!-- Brands -->
-  <section id="brands">
-    <h2>Marques que nous supportons</h2>
-    <div class="brands">
-      <img src="hp.png" alt="HP">
-      <img src="apple.png" alt="Apple">
-      <img src="lenovo.png" alt="Lenovo">
-      <img src="acer.png" alt="Acer">
-      <img src="asus.png" alt="Asus">
-      <img src="dell.png" alt="Dell">
-    </div>
-  </section>
+<section class="brands">
+  <img src="hp.png" alt="HP">
+  <img src="apple.png" alt="Apple">
+  <img src="lenovo.png" alt="Lenovo">
+  <img src="acer.png" alt="Acer">
+  <img src="asus.png" alt="Asus">
+  <img src="dell.png" alt="Dell">
+</section>
 
-  <!-- Testimonials -->
-  <section id="testimonials">
-    <h2>Avis Clients</h2>
-    <div class="testimonials">
-      <div class="testimonial">
-        <p>"Service rapide et très professionnel ! Mon PC fonctionne comme neuf."</p>
-        <h4>— Julien L.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Réparation de téléphone impeccable, je recommande vivement."</p>
-        <h4>— Marie P.</h4>
-      </div>
-      <div class="testimonial">
-        <p>"Montage et conseils parfaits pour mon nouveau PC."</p>
-        <h4>— Thomas R.</h4>
-      </div>
-    </div>
-  </section>
+<section id="testimonials" class="testimonials">
+  <h2>Ce que disent mes clients</h2>
+  <p class="testimonial">"Merci pour la réparation rapide de mon ordinateur !" — <strong>Jean D.</strong></p>
+  <p class="testimonial">"Très professionnel et efficace, je recommande vivement." — <strong>Marie L.</strong></p>
+</section>
 
-  <!-- Contact -->
-  <section id="contact">
-    <h2>Contact</h2>
-    <div class="contact">
-      <a href="tel:+33780208155"><i class="fas fa-phone"></i> +33 7 80 20 81 55</a>
-      <a href="mailto:peoneers@gmail.com"><i class="fas fa-envelope"></i> peoneers@gmail.com</a>
-      <p>Loudéac 22600, Bretagne</p>
-      <a href="mailto:peoneers@gmail.com" class="btn">Envoyer un message</a>
-    </div>
-  </section>
-</main>
+<section id="contact" class="contact">
+  <h2>Contactez-moi</h2>
+  <p>📞 <a href="tel:+33780208155">+33 7 80 20 81 55</a></p>
+  <p>📧 <a href="mailto:peoneers@gmail.com">peoneers@gmail.com</a></p>
+  <p>📍 Loudéac 22600, Bretagne</p>
+  <a href="mailto:peoneers@gmail.com" class="btn">Envoyer un message</a>
+</section>
 
 <footer>
   © 2025 CLICK INFORMATIQUE — Micro-entreprise de réparation informatique
