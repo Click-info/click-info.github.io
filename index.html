@@ -67,15 +67,29 @@
     }
 
     .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
+
+    .service {
       background: white;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      padding: 25px 30px;
-      line-height: 1.6;
-      font-size: 1rem;
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
     }
 
-    .services p {
+    .service:hover {
+      transform: scale(1.05);
+    }
+
+    .service img {
+      width: 60px;
+      height: auto;
       margin-bottom: 10px;
     }
 
@@ -188,22 +202,21 @@
   <section>
     <h2>Nos services</h2>
     <div class="services">
-      <p>💻 <strong>Réparation d’ordinateurs portables et de PC fixes</strong></p>
-      <p>Remplacement de claviers, d’écrans (matrices), de connecteurs et autres composants</p>
-      <p>Réparation de cartes mères</p>
-      <p>Installation et configuration de Windows</p>
-      <p>Nettoyage complet et optimisation du système</p>
-      <br>
-      <p>📱 <strong>Réparation de téléphones</strong></p>
-      <p>Remplacement d’écrans et de connecteurs de charge</p>
-      <p>Réparation de contrôleurs d’alimentation</p>
-      <p>Déblocage d’appareils, suppression de mots de passe ou de comptes oubliés</p>
-      <p>Diagnostic rapide et réparation sur place possible</p>
-      <br>
-      <p>⚙️ <strong>Assemblage & Vente de composants</strong></p>
-      <p>Vente de pièces détachées pour PC</p>
-      <p>Montage et configuration complète d’ordinateurs selon vos besoins</p>
-      <p>Conseils personnalisés pour le choix du matériel</p>
+      <div class="service">
+        <img src="apple.png" alt="Apple">
+        <h3>💻 Réparation d’ordinateurs portables et de PC fixes</h3>
+        <p>Remplacement de claviers, d’écrans (matrices), de connecteurs et autres composants.<br>Réparation de cartes mères.<br>Installation et configuration de Windows.<br>Nettoyage complet et optimisation du système.</p>
+      </div>
+      <div class="service">
+        <img src="hp.png" alt="HP">
+        <h3>📱 Réparation de téléphones</h3>
+        <p>Remplacement d’écrans et de connecteurs de charge.<br>Réparation de contrôleurs d’alimentation.<br>Déblocage d’appareils, suppression de mots de passe ou de comptes oubliés.<br>Diagnostic rapide et réparation sur place possible.</p>
+      </div>
+      <div class="service">
+        <img src="asus.png" alt="Asus">
+        <h3>⚙️ Assemblage & Vente de composants</h3>
+        <p>Vente de pièces détachées pour PC.<br>Montage et configuration complète d’ordinateurs selon vos besoins.<br>Conseils personnalisés pour le choix du matériel.</p>
+      </div>
     </div>
   </section>
 
@@ -242,7 +255,6 @@
 
   const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga';
 
-  // Отрисовка отзывов
   function renderReviews(reviews) {
     if (!reviews || !reviews.length) {
       reviewsContainer.innerHTML = '<p style="text-align:center;color:gray;">Pas encore d’avis</p>';
@@ -257,7 +269,6 @@
     `).join('');
   }
 
-  // Загрузка отзывов с Google Sheet
   function fetchReviews() {
     fetch(sheetDBURL)
       .then(res => res.json())
@@ -272,7 +283,6 @@
       .catch(err => console.error(err));
   }
 
-  // Отправка нового отзыва
   reviewForm.addEventListener('submit', e => {
     e.preventDefault();
     const name = document.getElementById('name').value.trim() || 'Anonyme';
@@ -293,12 +303,12 @@
     .then(res => res.json())
     .then(() => {
       reviewForm.reset();
-      fetchReviews(); // Обновляем список
+      fetchReviews();
     })
     .catch(err => console.error(err));
   });
 
-  fetchReviews(); // Изначальная загрузка
+  fetchReviews();
 })();
 </script>
 
