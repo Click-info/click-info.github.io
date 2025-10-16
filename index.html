@@ -67,29 +67,15 @@
     }
 
     .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
-
-    .service {
       background: white;
       border-radius: 10px;
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s;
+      padding: 25px 30px;
+      line-height: 1.6;
+      font-size: 1rem;
     }
 
-    .service:hover {
-      transform: scale(1.05);
-    }
-
-    .service img {
-      width: 60px;
-      height: auto;
+    .services p {
       margin-bottom: 10px;
     }
 
@@ -202,26 +188,22 @@
   <section>
     <h2>Nos services</h2>
     <div class="services">
-      <div class="service">
-        <img src="apple.png" alt="Apple">
-        <h3>Réparation ordinateurs</h3>
-        <p>Remplacement de disques, clavier, écran, carte mère, etc.</p>
-      </div>
-      <div class="service">
-        <img src="hp.png" alt="HP">
-        <h3>Réparation téléphones</h3>
-        <p>Changement d’écrans, batteries, connecteurs de charge, logiciels.</p>
-      </div>
-      <div class="service">
-        <img src="asus.png" alt="Asus">
-        <h3>Installation Windows & optimisation</h3>
-        <p>Réinstallation, sauvegarde de données, nettoyage complet.</p>
-      </div>
-      <div class="service">
-        <img src="acer.png" alt="Acer">
-        <h3>Maintenance et assistance</h3>
-        <p>Diagnostic, conseil matériel, aide à distance.</p>
-      </div>
+      <p>💻 <strong>Réparation d’ordinateurs portables et de PC fixes</strong></p>
+      <p>Remplacement de claviers, d’écrans (matrices), de connecteurs et autres composants</p>
+      <p>Réparation de cartes mères</p>
+      <p>Installation et configuration de Windows</p>
+      <p>Nettoyage complet et optimisation du système</p>
+      <br>
+      <p>📱 <strong>Réparation de téléphones</strong></p>
+      <p>Remplacement d’écrans et de connecteurs de charge</p>
+      <p>Réparation de contrôleurs d’alimentation</p>
+      <p>Déblocage d’appareils, suppression de mots de passe ou de comptes oubliés</p>
+      <p>Diagnostic rapide et réparation sur place possible</p>
+      <br>
+      <p>⚙️ <strong>Assemblage & Vente de composants</strong></p>
+      <p>Vente de pièces détachées pour PC</p>
+      <p>Montage et configuration complète d’ordinateurs selon vos besoins</p>
+      <p>Conseils personnalisés pour le choix du matériel</p>
     </div>
   </section>
 
@@ -255,18 +237,17 @@
 
 <script>
 (() => {
-  const reviews = [
-    { name: 'Sophie L.', text: 'Service impeccable et rapide, je recommande fortement !', date: '2025-10-05' },
-    { name: 'Jean P.', text: 'Mon PC fonctionne comme neuf, merci beaucoup !', date: '2025-10-07' },
-    { name: 'Camille D.', text: 'Très professionnel, réparation express de mon iPhone !', date: '2025-09-25' },
-    { name: 'Marc D.', text: 'Professionnels et rapides, excellent service !', date: '2025-09-15' },
-    { name: 'Élodie R.', text: 'Très satisfaite, tout fonctionne parfaitement.', date: '2025-09-18' }
-  ];
-
   const reviewsContainer = document.getElementById('reviews');
   const reviewForm = document.getElementById('reviewForm');
 
-  function renderReviews() {
+  const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga';
+
+  // Отрисовка отзывов
+  function renderReviews(reviews) {
+    if (!reviews || !reviews.length) {
+      reviewsContainer.innerHTML = '<p style="text-align:center;color:gray;">Pas encore d’avis</p>';
+      return;
+    }
     reviewsContainer.innerHTML = reviews.map(r => `
       <div class="review">
         <h4>${r.name}</h4>
@@ -276,16 +257,48 @@
     `).join('');
   }
 
+  // Загрузка отзывов с Google Sheet
+  function fetchReviews() {
+    fetch(sheetDBURL)
+      .then(res => res.json())
+      .then(data => {
+        const reviews = data.map(r => ({
+          name: r.nom || 'Anonyme',
+          text: r.commentaire || '',
+          date: r.date || new Date().toISOString()
+        }));
+        renderReviews(reviews.reverse());
+      })
+      .catch(err => console.error(err));
+  }
+
+  // Отправка нового отзыва
   reviewForm.addEventListener('submit', e => {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const text = document.getElementById('text').value;
-    reviews.unshift({ name, text, date: new Date().toISOString() });
-    reviewForm.reset();
-    renderReviews();
+    const name = document.getElementById('name').value.trim() || 'Anonyme';
+    const text = document.getElementById('text').value.trim();
+    if (!text) return;
+
+    const review = {
+      nom: name,
+      commentaire: text,
+      date: new Date().toISOString()
+    };
+
+    fetch(sheetDBURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify(review)
+    })
+    .then(res => res.json())
+    .then(() => {
+      reviewForm.reset();
+      fetchReviews(); // Обновляем список
+    })
+    .catch(err => console.error(err));
   });
 
-  renderReviews();
+  fetchReviews(); // Изначальная загрузка
 })();
 </script>
 
