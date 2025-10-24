@@ -3,8 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLICK INFORMATIQUE - Réparation et maintenance | Loudéac (22600)</title>
-    <meta name="description" content="Réparation professionnelle d'ordinateurs, téléphones, tablettes et vente de composants à Loudéac (22600). Diagnostic rapide et devis gratuit. Contact: 07 80 20 81 55." />
+  <title>CLICK INFORMATIQUE - Réparation et maintenance</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -143,49 +142,43 @@
       font-size: 1rem;
       line-height: 1.4;
     }
-
-    /* New styles for Contact Section and Social Links */
+    
+    /* НОВЫЕ СТИЛИ ДЛЯ КОНТАКТОВ */
     .contact-block {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 15px;
-      margin-top: 30px;
-    }
-
-    .contact-item {
-      display: flex;
-      align-items: center;
       gap: 10px;
+      margin-top: 20px;
       font-size: 1.1rem;
       font-weight: 600;
     }
-
-    .contact-item a {
-      color: #222; /* Use dark color for contact links */
-      text-decoration: none;
-    }
-    
-    .contact-item a:hover {
-      text-decoration: underline;
-    }
-
-    .social-links {
-      display: flex;
-      gap: 25px;
-      margin-top: 20px;
-    }
-
-    .social-links a {
+    .contact-block a {
       color: #0a74da;
       text-decoration: none;
+    }
+    .contact-block a:hover {
+      text-decoration: underline;
+    }
+    .social-links a {
+      margin: 0 10px;
       font-size: 1.8rem;
-      transition: color 0.3s;
+    }
+    /* СТИЛИ ДЛЯ ФУТЕРА */
+    .footer-info {
+      margin: 5px 0;
+      line-height: 1.4;
+    }
+    .footer-info a {
+      color: white;
+      text-decoration: none;
+    }
+    .footer-legal {
+      font-size: 0.8em;
+      opacity: 0.9;
+      margin-top: 5px;
     }
 
-    .social-links a:hover {
-      color: #095ec2;
-    }
 
     footer {
       background: #0a74da;
@@ -193,24 +186,6 @@
       text-align: center;
       padding: 15px;
       font-size: 0.9rem;
-    }
-    
-    .footer-contact {
-        margin-bottom: 10px;
-        line-height: 1.5;
-        font-size: 1em;
-    }
-
-    .footer-contact a {
-        color: white;
-        text-decoration: none;
-        font-weight: 400;
-    }
-    
-    .legal-info {
-        font-size: 0.8em;
-        margin-top: 5px;
-        opacity: 0.8;
     }
 
     form {
@@ -281,7 +256,7 @@
       </div>
     </div>
   </section>
-  <hr> 
+
   <section>
     <h2>Nos réalisations</h2>
     <div class="gallery">
@@ -293,7 +268,7 @@
       <img src="photo6.png" alt="Travail 6">
     </div>
   </section>
-  <hr>
+
   <section>
     <h2>Avis clients</h2>
     <div class="reviews" id="reviews"></div>
@@ -304,45 +279,34 @@
       <button type="submit">Envoyer</button>
     </form>
   </section>
-  <hr>
+  
     <section>
-    <h2>Nous Contacter & Horaires</h2>
+    <h2>Nous Contacter</h2>
     <div class="contact-block">
-            <div class="contact-item">
-        📞 **Téléphone :** <a href="tel:+33780208155" class="contact-link">07 80 20 81 55</a>
-      </div>
-      <div class="contact-item">
-        📧 **Email :** <a href="mailto:clickinformatique@ik.me" class="contact-link">clickinformatique@ik.me</a>
-      </div>
-            <div class="contact-item">
-        📍 **Adresse :** 6 Rue du Docteur Lecomte, 22600 Loudéac
-      </div>
+      <span>📍 **Adresse :** 6 Rue du Docteur Lecomte, 22600 Loudéac</span>
+      <span>📞 **Téléphone :** <a href="tel:+33780208155">07 80 20 81 55</a></span>
+      <span>📧 **Email :** <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a></span>
       
-            <div class="contact-item">
-        ⏳ **Horaires (sur rendez-vous) :** Lundi - Samedi (9h00 - 18h00)
-      </div>
-
-            <div class="social-links">
+      <div class="social-links">
                 <a href="https://www.facebook.com/profile.php?id=100009405681038" target="_blank" aria-label="Facebook">
           📘
         </a>
-                <a href="[ВАША ССЫЛКА НА INSTAGRAM]" target="_blank" aria-label="Instagram">
+                <a href="#" aria-label="Instagram">
           📸
         </a>
       </div>
     </div>
   </section>
-</main>
+  </main>
 
 <footer>
-  <div class="footer-contact">
-        <p>📍 6 Rue du Docteur Lecomte, 22600 Loudéac</p>
-    <p>📞 <a href="tel:+33780208155">07 80 20 81 55</a> | 📧 <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a></p>
+  <div class="footer-info">
+    📞 <a href="tel:+33780208155">07 80 20 81 55</a> | 📧 <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a>
   </div>
-  <div class="legal-info">
-    <p>Entrepreneur Individuel KOMAROV Vadim | SIRET: 99305747000011</p>
+  <div class="footer-legal">
+    Entrepreneur Individuel KOMAROV Vadim | SIRET: 99305747000011
   </div>
-  <p>© 2025 CLICK INFORMATIQUE — Réparation et assistance informatique à Loudéac</p>
+  © 2025 CLICK INFORMATIQUE — Réparation et assistance informatique à Loudéac
 </footer>
 
 <script>
@@ -350,8 +314,7 @@
   const reviewsContainer = document.getElementById('reviews');
   const reviewForm = document.getElementById('reviewForm');
 
-  // Убедитесь, что это правильный URL для вашей базы данных SheetDB
-  const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga'; 
+  const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga';
 
   function renderReviews(reviews) {
     if (!reviews || !reviews.length) {
@@ -403,12 +366,11 @@
     fetch(sheetDBURL, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ data: [review] }) // SheetDB часто требует { data: [object] } для POST
+      body: JSON.stringify({ data: [review] }) 
     })
     .then(res => res.json())
     .then(() => {
       reviewForm.reset();
-      // Через короткую паузу, чтобы дать SheetDB время обновиться
       setTimeout(fetchReviews, 500); 
     })
     .catch(err => console.error("Error posting review:", err));
