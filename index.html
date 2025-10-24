@@ -1,314 +1,420 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CLICK INFORMATIQUE - Réparation et maintenance</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Poppins', sans-serif;
-      background-color: #f5f5f5;
-      color: #222;
-    }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CLICK INFORMATIQUE - Réparation et maintenance | Loudéac (22600)</title>
+    <meta name="description" content="Réparation professionnelle d'ordinateurs, téléphones, tablettes et vente de composants à Loudéac (22600). Diagnostic rapide et devis gratuit. Contact: 07 80 20 81 55." />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background-color: #f5f5f5;
+      color: #222;
+    }
 
-    header {
-      background: url('header-bg.jpg') center/cover no-repeat;
-      height: 350px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: white;
-      position: relative;
-    }
+    header {
+      background: url('header-bg.jpg') center/cover no-repeat;
+      height: 350px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
 
-    header::after {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0,0,0,0.4);
-    }
+    header::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: rgba(0,0,0,0.4);
+    }
 
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+    }
 
-    header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 10px;
-      font-weight: 700;
-    }
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
 
-    header p {
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    header p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
 
-    main {
-      padding: 40px 20px;
-      max-width: 1100px;
-      margin: auto;
-    }
+    main {
+      padding: 40px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
 
-    section {
-      margin-bottom: 60px;
-    }
+    section {
+      margin-bottom: 60px;
+    }
 
-    h2 {
-      text-align: center;
-      color: #0a74da;
-      margin-bottom: 20px;
-    }
+    h2 {
+      text-align: center;
+      color: #0a74da;
+      margin-bottom: 20px;
+    }
 
-    .services {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 25px;
-    }
+    .services {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 25px;
+    }
 
-    .service {
-      background: white;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 300px;
-      text-align: center;
-      padding: 20px;
-      transition: transform 0.3s;
-    }
+    .service {
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 300px;
+      text-align: center;
+      padding: 20px;
+      transition: transform 0.3s;
+    }
 
-    .service:hover {
-      transform: scale(1.05);
-    }
+    .service:hover {
+      transform: scale(1.05);
+    }
 
-    .service img {
-      width: 60px;
-      height: auto;
-      margin-bottom: 10px;
-    }
+    .service img {
+      width: 60px;
+      height: auto;
+      margin-bottom: 10px;
+    }
 
-    .gallery {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 15px;
-    }
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
 
-    .gallery img {
-      width: 100%;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
+    .gallery img {
+      width: 100%;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
 
-    .gallery img:hover {
-      transform: scale(1.05);
-    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
 
-    .reviews {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-      align-items: center;
-    }
+    .reviews {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+    }
 
-    .review {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
-      width: 100%;
-      max-width: 600px;
-      position: relative;
-    }
+    .review {
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      width: 100%;
+      max-width: 600px;
+      position: relative;
+    }
 
-    .review h4 {
-      margin: 0;
-      color: #0a74da;
-    }
+    .review h4 {
+      margin: 0;
+      color: #0a74da;
+    }
 
-    .review small {
-      color: gray;
-      font-size: 0.9em;
-    }
+    .review small {
+      color: gray;
+      font-size: 0.9em;
+    }
 
-    .review p {
-      margin-top: 10px;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
+    .review p {
+      margin-top: 10px;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
 
-    footer {
-      background: #0a74da;
-      color: white;
-      text-align: center;
-      padding: 15px;
-      font-size: 0.9rem;
-    }
+    /* New styles for Contact Section and Social Links */
+    .contact-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
 
-    form {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      max-width: 400px;
-      margin: 20px auto;
-    }
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.1rem;
+      font-weight: 600;
+    }
 
-    input, textarea {
-      padding: 10px;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      font-family: 'Poppins', sans-serif;
-    }
+    .contact-item a {
+      color: #222; /* Use dark color for contact links */
+      text-decoration: none;
+    }
+    
+    .contact-item a:hover {
+      text-decoration: underline;
+    }
 
-    button {
-      background: #0a74da;
-      color: white;
-      border: none;
-      padding: 10px;
-      border-radius: 5px;
-      cursor: pointer;
-      font-weight: 600;
-      transition: 0.3s;
-    }
+    .social-links {
+      display: flex;
+      gap: 25px;
+      margin-top: 20px;
+    }
 
-    button:hover {
-      background: #095ec2;
-    }
+    .social-links a {
+      color: #0a74da;
+      text-decoration: none;
+      font-size: 1.8rem;
+      transition: color 0.3s;
+    }
 
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    .social-links a:hover {
+      color: #095ec2;
+    }
+
+    footer {
+      background: #0a74da;
+      color: white;
+      text-align: center;
+      padding: 15px;
+      font-size: 0.9rem;
+    }
+    
+    .footer-contact {
+        margin-bottom: 10px;
+        line-height: 1.5;
+        font-size: 1em;
+    }
+
+    .footer-contact a {
+        color: white;
+        text-decoration: none;
+        font-weight: 400;
+    }
+    
+    .legal-info {
+        font-size: 0.8em;
+        margin-top: 5px;
+        opacity: 0.8;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+
+    input, textarea {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    button {
+      background: #0a74da;
+      color: white;
+      border: none;
+      padding: 10px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: #095ec2;
+    }
+
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
 <header>
-  <h1>CLICK INFORMATIQUE</h1>
-  <p>Réparation ordinateurs, téléphones, tablettes & assistance technique à Loudéac et alentours</p>
+  <h1>CLICK INFORMATIQUE</h1>
+  <p>Réparation ordinateurs, téléphones, tablettes & assistance technique à Loudéac et alentours</p>
 </header>
 
 <main>
-  <section>
-    <h2>Nos services</h2>
-    <div class="services">
-      <div class="service">
-        <img src="apple.png" alt="Apple">
-        <h3>💻 Réparation d’ordinateurs portables et de PC fixes</h3>
-        <p>Remplacement de claviers, d’écrans (matrices), de connecteurs et autres composants.<br>Réparation de cartes mères.<br>Installation et configuration de Windows.<br>Nettoyage complet et optimisation du système.</p>
-      </div>
-      <div class="service">
-        <img src="hp.png" alt="HP">
-        <h3>📱 Réparation de téléphones</h3>
-        <p>Remplacement d’écrans et de connecteurs de charge.<br>Réparation de contrôleurs d’alimentation.<br>Déblocage d’appareils, suppression de mots de passe ou de comptes oubliés.<br>Diagnostic rapide et réparation sur place possible.</p>
-      </div>
-      <div class="service">
-        <img src="asus.png" alt="Asus">
-        <h3>⚙️ Assemblage & Vente de composants</h3>
-        <p>Vente de pièces détachées pour PC.<br>Montage et configuration complète d’ordinateurs selon vos besoins.<br>Conseils personnalisés pour le choix du matériel.</p>
-      </div>
-    </div>
-  </section>
+  <section>
+    <h2>Nos services</h2>
+    <div class="services">
+      <div class="service">
+        <img src="apple.png" alt="Apple">
+        <h3>💻 Réparation d’ordinateurs portables et de PC fixes</h3>
+        <p>Remplacement de claviers, d’écrans (matrices), de connecteurs et autres composants.<br>Réparation de cartes mères.<br>Installation et configuration de Windows.<br>Nettoyage complet et optimisation du système.</p>
+      </div>
+      <div class="service">
+        <img src="hp.png" alt="HP">
+        <h3>📱 Réparation de téléphones</h3>
+        <p>Remplacement d’écrans et de connecteurs de charge.<br>Réparation de contrôleurs d’alimentation.<br>Déblocage d’appareils, suppression de mots de passe ou de comptes oubliés.<br>Diagnostic rapide et réparation sur place possible.</p>
+      </div>
+      <div class="service">
+        <img src="asus.png" alt="Asus">
+        <h3>⚙️ Assemblage & Vente de composants</h3>
+        <p>Vente de pièces détachées pour PC.<br>Montage et configuration complète d’ordinateurs selon vos besoins.<br>Conseils personnalisés pour le choix du matériel.</p>
+      </div>
+    </div>
+  </section>
+  <hr> 
+  <section>
+    <h2>Nos réalisations</h2>
+    <div class="gallery">
+      <img src="photo1.png" alt="Travail 1">
+      <img src="photo2.png" alt="Travail 2">
+      <img src="photo3.png" alt="Travail 3">
+      <img src="photo4.png" alt="Travail 4">
+      <img src="photo5.png" alt="Travail 5">
+      <img src="photo6.png" alt="Travail 6">
+    </div>
+  </section>
+  <hr>
+  <section>
+    <h2>Avis clients</h2>
+    <div class="reviews" id="reviews"></div>
 
-  <section>
-    <h2>Nos réalisations</h2>
-    <div class="gallery">
-      <img src="photo1.png" alt="Travail 1">
-      <img src="photo2.png" alt="Travail 2">
-      <img src="photo3.png" alt="Travail 3">
-      <img src="photo4.png" alt="Travail 4">
-      <img src="photo5.png" alt="Travail 5">
-      <img src="photo6.png" alt="Travail 6">
-    </div>
-  </section>
+    <form id="reviewForm">
+      <input type="text" id="name" placeholder="Votre nom" required>
+      <textarea id="text" rows="3" placeholder="Votre avis" required></textarea>
+      <button type="submit">Envoyer</button>
+    </form>
+  </section>
+  <hr>
+    <section>
+    <h2>Nous Contacter & Horaires</h2>
+    <div class="contact-block">
+            <div class="contact-item">
+        📞 **Téléphone :** <a href="tel:+33780208155" class="contact-link">07 80 20 81 55</a>
+      </div>
+      <div class="contact-item">
+        📧 **Email :** <a href="mailto:clickinformatique@ik.me" class="contact-link">clickinformatique@ik.me</a>
+      </div>
+            <div class="contact-item">
+        📍 **Adresse :** 6 Rue du Docteur Lecomte, 22600 Loudéac
+      </div>
+      
+            <div class="contact-item">
+        ⏳ **Horaires (sur rendez-vous) :** Lundi - Samedi (9h00 - 18h00)
+      </div>
 
-  <section>
-    <h2>Avis clients</h2>
-    <div class="reviews" id="reviews"></div>
-
-    <form id="reviewForm">
-      <input type="text" id="name" placeholder="Votre nom" required>
-      <textarea id="text" rows="3" placeholder="Votre avis" required></textarea>
-      <button type="submit">Envoyer</button>
-    </form>
-  </section>
+            <div class="social-links">
+                <a href="https://www.facebook.com/profile.php?id=100009405681038" target="_blank" aria-label="Facebook">
+          📘
+        </a>
+                <a href="[ВАША ССЫЛКА НА INSTAGRAM]" target="_blank" aria-label="Instagram">
+          📸
+        </a>
+      </div>
+    </div>
+  </section>
 </main>
 
 <footer>
-  © 2025 CLICK INFORMATIQUE — Réparation et assistance informatique à Loudéac
+  <div class="footer-contact">
+        <p>📍 6 Rue du Docteur Lecomte, 22600 Loudéac</p>
+    <p>📞 <a href="tel:+33780208155">07 80 20 81 55</a> | 📧 <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a></p>
+  </div>
+  <div class="legal-info">
+    <p>Entrepreneur Individuel KOMAROV Vadim | SIRET: 99305747000011</p>
+  </div>
+  <p>© 2025 CLICK INFORMATIQUE — Réparation et assistance informatique à Loudéac</p>
 </footer>
 
 <script>
 (() => {
-  const reviewsContainer = document.getElementById('reviews');
-  const reviewForm = document.getElementById('reviewForm');
+  const reviewsContainer = document.getElementById('reviews');
+  const reviewForm = document.getElementById('reviewForm');
 
-  const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga';
+  // Убедитесь, что это правильный URL для вашей базы данных SheetDB
+  const sheetDBURL = 'https://sheetdb.io/api/v1/5t4v24guyqzga'; 
 
-  function renderReviews(reviews) {
-    if (!reviews || !reviews.length) {
-      reviewsContainer.innerHTML = '<p style="text-align:center;color:gray;">Pas encore d’avis</p>';
-      return;
-    }
-    reviewsContainer.innerHTML = reviews.map(r => `
-      <div class="review">
-        <h4>${r.name}</h4>
-        <small>${new Date(r.date).toLocaleDateString('fr-FR')}</small>
-        <p>${r.text}</p>
-      </div>
-    `).join('');
-  }
+  function renderReviews(reviews) {
+    if (!reviews || !reviews.length) {
+      reviewsContainer.innerHTML = '<p style="text-align:center;color:gray;">Pas encore d’avis</p>';
+      return;
+    }
+    reviewsContainer.innerHTML = reviews.map(r => `
+      <div class="review">
+        <h4>${r.name}</h4>
+        <small>${new Date(r.date).toLocaleDateString('fr-FR')}</small>
+        <p>${r.text}</p>
+      </div>
+    `).join('');
+  }
 
-  function fetchReviews() {
-    fetch(sheetDBURL)
-      .then(res => res.json())
-      .then(data => {
-        const reviews = data.map(r => ({
-          name: r.nom || 'Anonyme',
-          text: r.commentaire || '',
-          date: r.date || new Date().toISOString()
-        }));
-        renderReviews(reviews.reverse());
-      })
-      .catch(err => console.error(err));
-  }
+  function fetchReviews() {
+    fetch(sheetDBURL)
+      .then(res => res.json())
+      .then(data => {
+        // Проверка, что данные - это массив
+        if (!Array.isArray(data)) {
+          console.error("Invalid data format received from SheetDB:", data);
+          renderReviews([]);
+          return;
+        }
+        
+        const reviews = data.map(r => ({
+          name: r.nom || 'Anonyme',
+          text: r.commentaire || '',
+          date: r.date || new Date().toISOString()
+        }));
+        renderReviews(reviews.reverse());
+      })
+      .catch(err => console.error("Error fetching reviews:", err));
+  }
 
-  reviewForm.addEventListener('submit', e => {
-    e.preventDefault();
-    const name = document.getElementById('name').value.trim() || 'Anonyme';
-    const text = document.getElementById('text').value.trim();
-    if (!text) return;
+  reviewForm.addEventListener('submit', e => {
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim() || 'Anonyme';
+    const text = document.getElementById('text').value.trim();
+    if (!text) return;
 
-    const review = {
-      nom: name,
-      commentaire: text,
-      date: new Date().toISOString()
-    };
+    const review = {
+      nom: name,
+      commentaire: text,
+      date: new Date().toISOString()
+    };
 
-    fetch(sheetDBURL, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify(review)
-    })
-    .then(res => res.json())
-    .then(() => {
-      reviewForm.reset();
-      fetchReviews();
-    })
-    .catch(err => console.error(err));
-  });
+    fetch(sheetDBURL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ data: [review] }) // SheetDB часто требует { data: [object] } для POST
+    })
+    .then(res => res.json())
+    .then(() => {
+      reviewForm.reset();
+      // Через короткую паузу, чтобы дать SheetDB время обновиться
+      setTimeout(fetchReviews, 500); 
+    })
+    .catch(err => console.error("Error posting review:", err));
+  });
 
-  fetchReviews();
+  fetchReviews();
 })();
 </script>
 
