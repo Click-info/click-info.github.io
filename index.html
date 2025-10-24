@@ -4,6 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CLICK INFORMATIQUE - Réparation et maintenance</title>
+    <meta name="phone" content="0780208155">
+  <meta name="email" content="clickinformatique@ik.me">
+  <meta name="address" content="6 Rue du Docteur Lecomte, 22600 Loudéac">
+  
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
   <style>
     body {
@@ -142,43 +146,6 @@
       font-size: 1rem;
       line-height: 1.4;
     }
-    
-    /* НОВЫЕ СТИЛИ ДЛЯ КОНТАКТОВ */
-    .contact-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 10px;
-      margin-top: 20px;
-      font-size: 1.1rem;
-      font-weight: 600;
-    }
-    .contact-block a {
-      color: #0a74da;
-      text-decoration: none;
-    }
-    .contact-block a:hover {
-      text-decoration: underline;
-    }
-    .social-links a {
-      margin: 0 10px;
-      font-size: 1.8rem;
-    }
-    /* СТИЛИ ДЛЯ ФУТЕРА */
-    .footer-info {
-      margin: 5px 0;
-      line-height: 1.4;
-    }
-    .footer-info a {
-      color: white;
-      text-decoration: none;
-    }
-    .footer-legal {
-      font-size: 0.8em;
-      opacity: 0.9;
-      margin-top: 5px;
-    }
-
 
     footer {
       background: #0a74da;
@@ -187,6 +154,30 @@
       padding: 15px;
       font-size: 0.9rem;
     }
+    
+    /* ДОБАВЛЕННЫЕ СТИЛИ ДЛЯ ФУТЕРА */
+    .footer-contact-info {
+      margin-bottom: 8px;
+      font-weight: 600;
+      line-height: 1.5;
+      font-size: 1em;
+    }
+    .footer-contact-info a {
+      color: white;
+      text-decoration: underline;
+    }
+    .footer-social a {
+      color: white;
+      margin: 0 5px;
+      font-size: 1.3em;
+      text-decoration: none;
+    }
+    .footer-legal {
+      font-size: 0.8em;
+      margin-top: 5px;
+      opacity: 0.9;
+    }
+    /* КОНЕЦ ДОБАВЛЕННЫХ СТИЛЕЙ */
 
     form {
       display: flex;
@@ -279,29 +270,16 @@
       <button type="submit">Envoyer</button>
     </form>
   </section>
-  
-    <section>
-    <h2>Nous Contacter</h2>
-    <div class="contact-block">
-      <span>📍 **Adresse :** 6 Rue du Docteur Lecomte, 22600 Loudéac</span>
-      <span>📞 **Téléphone :** <a href="tel:+33780208155">07 80 20 81 55</a></span>
-      <span>📧 **Email :** <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a></span>
-      
-      <div class="social-links">
-                <a href="https://www.facebook.com/profile.php?id=100009405681038" target="_blank" aria-label="Facebook">
-          📘
-        </a>
-                <a href="#" aria-label="Instagram">
-          📸
-        </a>
-      </div>
-    </div>
-  </section>
-  </main>
+</main>
 
 <footer>
-  <div class="footer-info">
+    <div class="footer-contact-info">
+    📍 6 Rue du Docteur Lecomte, 22600 Loudéac
+    <br>
     📞 <a href="tel:+33780208155">07 80 20 81 55</a> | 📧 <a href="mailto:clickinformatique@ik.me">clickinformatique@ik.me</a>
+  </div>
+  <div class="footer-social">
+        <a href="https://www.facebook.com/profile.php?id=100009405681038" target="_blank" aria-label="Facebook">📘</a>
   </div>
   <div class="footer-legal">
     Entrepreneur Individuel KOMAROV Vadim | SIRET: 99305747000011
